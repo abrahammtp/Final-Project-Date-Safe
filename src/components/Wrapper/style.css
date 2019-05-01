@@ -1,0 +1,20 @@
+.info-container {
+  max-width: 400px;
+  margin-left: 60px;
+
+}
+
+.splash {
+  font-family: 'Abril Fatface', cursive;
+  font-weight: bold;
+}
+.para {
+  font-size: 18px
+}
+.btn {
+  background: rgb(41, 39, 39, 0.6)
+}
+.btn:hover {
+  background: rgb(41, 39, 39)
+
+}
