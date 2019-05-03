@@ -11,3 +11,9 @@ nav {
     width:90%;
     margin-left:60px;
 }
+
+.img {
+    max-width: 400px;
+    max-height: 80px
+}
+

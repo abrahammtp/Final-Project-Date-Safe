@@ -1,14 +1,24 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar"
-import Wrapper from "./components/Wrapper";
-import "./App.css";
+// import "./App.css";
+import Splash from "./pages/splash/splash"
+import logIn from "./pages/login/login"
+import Footer from "./components/Footer/footer";
 
 function App () {
-  return(
+return (
+    <Router>
     <div>
       <Navbar />
-      <Wrapper />
+      <Switch>
+        <Route exact path="/" component={Splash} />
+        <Route exact path="/login" component={logIn} />
+      </Switch>
     </div>
-  )
+<Footer />
+  </Router>
+);
 }
+
 export default App;

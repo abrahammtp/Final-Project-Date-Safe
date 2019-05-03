@@ -6,10 +6,10 @@ function navBar() {
 <div>
   <nav>
     <div class="">
-      <a href="test.test" class="brand-logo">Date Safe</a>
+    <img className="img" src={require('./logo.png')} alt="logo">
+    </img>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="nothing">Sign In</a></li>
-        <li><a href="nothing">Log In</a></li>
+        <li><a href="/login">Log In</a></li>
       </ul>
     </div>
   </nav>
