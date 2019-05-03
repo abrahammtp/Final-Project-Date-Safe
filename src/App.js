@@ -14,6 +14,7 @@ return (
       <Switch>
         <Route exact path="/" component={Splash} />
         <Route exact path="/login" component={logIn} />
+        <Route exact path="/userPage" component={userPage} />
       </Switch>
     </div>
 <Footer />
