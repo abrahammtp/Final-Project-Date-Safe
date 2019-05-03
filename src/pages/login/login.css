@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: rgb(2, 132, 219);
+  }
+
+  .login-card {
+    margin-left: 35%;
+    max-width: 2000px;
+    max-height:800px;
+    margin-top: 50px;
+  }
+
+  .row .col.s6 {
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
