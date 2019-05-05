@@ -33,7 +33,7 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 
 //Server Static assests if we're in production
-if (proces.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   //set static folder
   app.use(express.static('client/build'));
 
