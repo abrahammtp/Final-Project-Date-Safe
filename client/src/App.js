@@ -7,7 +7,7 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
-// import "./App.css";
+import "./App.css";
 import Navbar from "./components/layout/Navbar/Navbar"
 import Splash from "./pages/splash/splash"
 import Register from "./components/auth/Register";
