@@ -13,6 +13,9 @@ class Register extends Component {
       email: "",
       password: "",
       password2: "",
+      address: "",
+      gender: "",
+      number: "",
       errors: {}
     };
   }
@@ -39,6 +42,9 @@ class Register extends Component {
     e.preventDefault();
     const newUser = {
       name: this.state.name,
+      address: this.state.address,
+      number: this.state.number,
+      gender: this.state.gender,
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2
@@ -78,6 +84,48 @@ class Register extends Component {
                 />
                 <label htmlFor="name">Name</label>
                 <span className="red-text">{errors.name}</span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.address}
+                  error={errors.address}
+                  id="address"
+                  type="text"
+                  className={classnames("", {
+                    invalid: errors.address
+                  })}
+                />
+                <label htmlFor="email">Address</label>
+                <span className="red-text">{errors.address}</span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.number}
+                  error={errors.number}
+                  id="number"
+                  type="number"
+                  className={classnames("", {
+                    invalid: errors.number
+                  })}
+                />
+                <label htmlFor="email">Phone Number</label>
+                <span className="red-text">{errors.number}</span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.gender}
+                  error={errors.gender}
+                  id="gender"
+                  type="text"
+                  className={classnames("", {
+                    invalid: errors.gender
+                  })}
+                />
+                <label htmlFor="email">Gender</label>
+                <span className="red-text">{errors.gender}</span>
               </div>
               <div className="input-field col s12">
                 <input
