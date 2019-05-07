@@ -70,6 +70,24 @@ class Dashboard extends Component {
             </Col>
           </Row>
         </Container>
+        <br />
+        <Container fluid style={{ lineHeight: '300px' }}>
+        <Row debug>
+          <Col debug>
+            <Col fluid style={{ lineHeight: '150px' }}>Upcoming dates</Col>
+            <Col fluid style={{ lineHeight: '150px' }}>Previous dates</Col>
+          </Col>
+          <Col debug>
+          <Row>
+            <Col  fluid style={{ lineHeight: '100px' }}>
+              <button>Add a new emergency contact</button>
+            </Col>
+            <Col  fluid style={{ lineHeight: '100px' }}></Col>
+            <Col  fluid style={{ lineHeight: '100px' }}>Contacts</Col>
+          </Row>
+          </Col>
+        </Row>
+        </Container>
       </div>
     );
   }
