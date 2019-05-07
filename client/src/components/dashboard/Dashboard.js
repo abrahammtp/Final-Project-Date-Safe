@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Navbar from "./Navbar/Navbar";
+import { Row, Container, Col } from 'react-grid-system';
+
 class Dashboard extends Component {
   onLogoutClick = e => {
     e.preventDefault();
@@ -38,40 +40,36 @@ class Dashboard extends Component {
       // </div>
       <div>
         <Navbar />
-        <div className="col-lg-6">
-          <div className="Row">
-            <div className="col-md-5">
-              <button>Create a new date</button>
-            </div>
-          </div>
-          <br></br>
-          <div className="col-lg-10">
-            <h1>Previous and upcoming dates are going to be here</h1>
-          </div>
-        </div>
-        <div className="col-lg-6">
-          <div className="col-lg-8">
-            <div className="Row">
-              <div className="col-md-4">
-                <h2>{user.name.split(" ")[0]} 's photo</h2>
-              </div>
-              <br></br>
-              <div className="col-lg-8">
-                <h2>{user.name.split(" ")[0]} 's Information</h2>
-              </div>
-            </div>
-            <div className="Row">
-              <div className="Row">
-                <div className="col-lg-10">
-                  <h2>Contacts</h2>
-                </div>
-              </div>
-              <div className="Row">
-                <h2>Emergency contacts are going to be here</h2>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Container fluid style={{ lineHeight: '100px' }}>
+          <Row>
+            <Col debug>
+              <Container fluid style={{ lineHeight: '64px' }}>
+                <Row>
+                  <Col debug>
+                    <button>Create a new date</button>
+                  </Col>
+                  <Col debug></Col>
+                  <Col debug></Col>
+                </Row>
+              </Container>
+            </Col>
+            <Col debug>
+              <Container fluid style={{ lineHeight: '80px' }}>
+                <Row>
+                  <Col debug></Col>
+                  <Col debug>
+                    <div>
+                      <p>Hello, {user.name.split(" ")[0]}!</p>
+                      <p>Welcome to Date Safe</p>
+                      {/* <p>Address: {user.address.split(" ")[0]}</p>
+                    <p>Phone Number: {user.number.split(" ")[0]}</p> */}
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
