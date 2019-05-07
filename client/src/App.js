@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
-
 import { Provider } from "react-redux";
 import store from "./store";
 
@@ -15,6 +14,7 @@ import Login from "./components/auth/Login";
 import Footer from "./components/layout/Footer/footer";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+import Shared from "./pages/SharedPage/sharedPage";
 // import userPage from "./pages/userPage";
 
 // Check for token to keep user logged in
@@ -45,6 +45,7 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/" component={Splash} />
+          <Route exact path="/shared" component={Shared} />
           <Switch>
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
           </Switch>
