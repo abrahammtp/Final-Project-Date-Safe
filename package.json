@@ -1,4 +1,4 @@
-{
+ {
   "name": "final-project",
   "version": "1.0.0",
   "description": "Final project for the UCF Coding Bootcamp, we are building a location sharing app aimed at people going on dates.",
@@ -9,7 +9,8 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install -- prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install -- prefix client && npm run build --prefix client",
+    "test": "mocha"
   },
   "keywords": [
     "MERN",
@@ -32,6 +33,7 @@
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
+    "mocha": "^6.1.4",
     "mongoose": "^5.5.5",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",

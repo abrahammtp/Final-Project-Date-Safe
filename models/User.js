@@ -68,3 +68,5 @@ const ContactsSchema = new Schema({
   }
 });
 module.exports = User = mongoose.model("users", UserSchema);
+module.exports = contacts = mongoose.model("users", ContactsSchema);
+module.exports = dates = mongoose.model("users", DatesSchema);
