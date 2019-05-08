@@ -30,8 +30,8 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  dates: [DatesSchema],
-  contacts: [ContactsSchema]
+  // dates: [DatesSchema],
+  // contacts: [ContactsSchema]
 });
 
 const DatesSchema = new Schema({
@@ -67,4 +67,4 @@ const ContactsSchema = new Schema({
     required: true
   }
 });
-module.exports = User = mongoose.model("users", UserSchema);
+module.exports = User = mongoose.model("users", UserSchema, DatesSchema, UserSchema);
