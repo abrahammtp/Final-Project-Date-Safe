@@ -30,8 +30,8 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  dates: [DatesSchema],
-  contacts: [ContactsSchema]
+  // dates: [DatesSchema],
+  // contacts: [ContactsSchema]
 });
 
 const DatesSchema = new Schema({
