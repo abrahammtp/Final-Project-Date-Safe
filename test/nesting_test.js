@@ -38,7 +38,7 @@ describe('Nesting records', function(){
         });
     });
 
-    it('Adds a date and a contact to an user', function(done){
+    it('Adds a date and a contact to a user', function(done){
 
         var michelle = new Dates({
             // name: 'Rodrigo Torres Pinto',
