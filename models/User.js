@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 // const DatesSchema = require("./Date");
 // const ContactsSchema = require('./Contact');
-
 // Create Schema for a new user
 
 const DatesSchema = new Schema({
@@ -39,6 +38,8 @@ const ContactsSchema = new Schema({
   }
 });
 
+
+// Create Schemas for user, who they are going on a date with and emergency contacts
 const UserSchema = new Schema({
   name: {
     type: String,
@@ -80,4 +81,3 @@ module.exports = Contact;
 
 const Dates = mongoose.model("Date", DatesSchema);
 module.exports = Dates;
-
