@@ -33,8 +33,8 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
-app.use("/api/contacts", contactsRoute);
-app.use("/api/dates", datesRoute);
+// app.use("/api/contacts", contactsRoute);
+// app.use("/api/dates", datesRoute);
 
 //Server Static assests if we're in production
 if (process.env.NODE_ENV === 'production') {

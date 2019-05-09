@@ -80,8 +80,4 @@ const UserSchema = new Schema({
 const User = mongoose.model("User", UserSchema);
 const Contact = mongoose.model("Contact", ContactsSchema);
 const Dates = mongoose.model("Dates", DatesSchema);
-module.exports = {
-  User: User,
-  Contact: Contact,
-  Dates: Dates
-};
+module.exports = User
