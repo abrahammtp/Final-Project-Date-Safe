@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
-const DatesSchema = require("./Date");
-const ContactsSchema = require('./Contact');
+// const DatesSchema = require("./Date");
+// const ContactsSchema = require('./Contact');
 // Create Schema for a new user
 
 const DatesSchema = new Schema({
@@ -75,9 +74,10 @@ const UserSchema = new Schema({
 });
 
 const User = mongoose.model("User", UserSchema);
-
 module.exports = User;
 
-module.exports = User = mongoose.model("users", UserSchema);
-module.exports = contacts = mongoose.model("contacts", ContactsSchema);
-module.exports = dates = mongoose.model("dates", DatesSchema);
+const Contact = mongoose.model("Contact", ContactsSchema);
+module.exports = Contact;
+
+const Dates = mongoose.model("Date", DatesSchema);
+module.exports = Dates;

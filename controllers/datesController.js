@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("../models/Date");
 
 // Defining methods for datesControllers
 module.exports = {
