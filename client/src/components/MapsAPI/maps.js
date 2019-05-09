@@ -12,6 +12,7 @@ class Map extends Component {
     }
 
     initMap = () => {
+        // eslint-disable-next-line
         var map = new window.google.maps.Map
             (document.getElementById('map'), {
                 center: { lat: 28.548373, lng: -81.380369 },

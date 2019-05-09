@@ -6,38 +6,43 @@ import Navbar from "./Navbar/Navbar";
 import { Row, Container, Col } from 'react-grid-system';
 
 class Dashboard extends Component {
+  constructor() {
+    super();
+    this.state = {
+      dateName: "",
+      dateNumber: "",
+      metThrough: "",
+      dateDescription: "",
+      dateAddress: "",
+      errors: {}
+    };
+  }
+  onChange = e => {
+    this.setState({ [e.target.id]: e.target.value });
+  };
+
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
   };
+
+  onSubmit = e => {
+    e.preventDefault();
+    const userDate = {
+      dateName: this.state.dateName
+    }
+  }
+
+
   render() {
     const { user } = this.props.auth;
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = window.M.Modal.init(elems);
+  });
+
     return (
-      // <div style={{ height: "75vh" }} className="container valign-wrapper">
-      //   <div className="row">
-      //     <div className="col s12 center-align">
-      //       <h4>
-      //         <b>Hey there,</b> {user.name.split(" ")[0]}
-      //         <p className="flow-text grey-text text-darken-1">
-      //           You are logged into a full-stack{" "}
-      //           <span style={{ fontFamily: "monospace" }}>MERN</span> app 👏
-      //         </p>
-      //       </h4>
-      //       <button
-      //         style={{
-      //           width: "150px",
-      //           borderRadius: "3px",
-      //           letterSpacing: "1.5px",
-      //           marginTop: "1rem"
-      //         }}
-      //         onClick={this.onLogoutClick}
-      //         className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-      //       >
-      //         Logout
-      //       </button>
-      //     </div>
-      //   </div>
-      // </div>
       <div>
         <Navbar />
         <Container fluid style={{ lineHeight: '100px' }}>
@@ -46,7 +51,27 @@ class Dashboard extends Component {
               <Container fluid style={{ lineHeight: '64px' }}>
                 <Row>
                   <Col debug>
-                    <button>Create a new date</button>
+                    {/* Modal Trigger */}
+
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">New Date</a>
+
+                    <div id="modal1" class="modal">
+                      <div class="modal-content">
+                        <h4>Create a new date!</h4>
+                        <form onSubmit={this.onSubmit}>
+                        <label htmlFor="text">Name of your date</label>
+                        <input
+                        onChange={this.onChange}
+                        value={this.state.dateName}
+                        id="dateName"
+                        type="text"
+                        />
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn">Submit</a>
+                      </div>
+                    </div>
                   </Col>
                   <Col debug></Col>
                   <Col debug></Col>
@@ -60,6 +85,8 @@ class Dashboard extends Component {
                   <Col debug>
                     <div>
                       <p>Hello, {user.name.split(" ")[0]}!</p>
+                      <p>Hello, {user.id}!</p>
+
                       <p>Welcome to Date Safe</p>
                       {/* <p>Address: {user.address.split(" ")[0]}</p>
                     <p>Phone Number: {user.number.split(" ")[0]}</p> */}
@@ -72,21 +99,21 @@ class Dashboard extends Component {
         </Container>
         <br />
         <Container fluid style={{ lineHeight: '300px' }}>
-        <Row debug>
-          <Col debug>
-            <Col fluid style={{ lineHeight: '150px' }}>Upcoming dates</Col>
-            <Col fluid style={{ lineHeight: '150px' }}>Previous dates</Col>
-          </Col>
-          <Col debug>
-          <Row>
-            <Col  fluid style={{ lineHeight: '100px' }}>
-              <button>Add a new emergency contact</button>
+          <Row debug>
+            <Col debug>
+              <Col fluid style={{ lineHeight: '150px' }}>Upcoming dates</Col>
+              <Col fluid style={{ lineHeight: '150px' }}>Previous dates</Col>
             </Col>
-            <Col  fluid style={{ lineHeight: '100px' }}></Col>
-            <Col  fluid style={{ lineHeight: '100px' }}>Contacts</Col>
+            <Col debug>
+              <Row>
+                <Col fluid style={{ lineHeight: '100px' }}>
+                  <button>Add a new emergency contact</button>
+                </Col>
+                <Col fluid style={{ lineHeight: '100px' }}></Col>
+                <Col fluid style={{ lineHeight: '100px' }}>Contacts</Col>
+              </Row>
+            </Col>
           </Row>
-          </Col>
-        </Row>
         </Container>
       </div>
     );

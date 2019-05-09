@@ -8,9 +8,6 @@ const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 // Load User model
 const User = require("../../models/User");
-
-const ls = require('local-storage')
-
 // @route POST api/users/register
 // @desc Register user
 // @access Public
@@ -62,7 +59,6 @@ router.post("/login", (req, res) => {
   }
   const email = req.body.email;
   const password = req.body.password;
-
   // Find user by email
   User.findOne({ email }).then(user => {
     // Check if user exists
