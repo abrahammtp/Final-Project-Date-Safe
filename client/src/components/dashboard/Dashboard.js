@@ -28,7 +28,6 @@ class Dashboard extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    
     const userDate = {
       id: this.user.id,
       dateName: this.state.dateName
