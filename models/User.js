@@ -1,12 +1,16 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const DatesSchema = require("./Date");
+const ContactsSchema = require('./Contact');
+// Create Schema for a new user
+
 const DatesSchema = new Schema({
-  name: {
+  dateName: {
     type: String,
     required: false
   },
-  number: {
+  dateNumber: {
     type: String,
     required: false
   },
@@ -21,11 +25,11 @@ const DatesSchema = new Schema({
 });
 
 const ContactsSchema = new Schema({
-  name: {
+  contactName: {
     type: String,
     required: false
   },
-  number: {
+  contactNumber: {
     type: String,
     required: false
   },
@@ -34,6 +38,8 @@ const ContactsSchema = new Schema({
     required: false
   }
 });
+
+
 // Create Schemas for user, who they are going on a date with and emergency contacts
 const UserSchema = new Schema({
   name: {
@@ -67,6 +73,11 @@ const UserSchema = new Schema({
   dates: [DatesSchema],
   contacts: [ContactsSchema]
 });
+
+const User = mongoose.model("User", UserSchema);
+
+module.exports = User;
+
 module.exports = User = mongoose.model("users", UserSchema);
 module.exports = contacts = mongoose.model("contacts", ContactsSchema);
 module.exports = dates = mongoose.model("dates", DatesSchema);
