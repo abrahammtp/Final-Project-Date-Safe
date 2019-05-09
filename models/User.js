@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 // const DatesSchema = require("./Date");
+
 // const ContactsSchema = require("./Contact");
 
 // Create Schema for a new user, date and contact
+
 
 const DatesSchema = new Schema({
   dateName: {
@@ -39,6 +41,8 @@ const ContactsSchema = new Schema({
   }
 });
 
+
+// Create Schemas for user, who they are going on a date with and emergency contacts
 const UserSchema = new Schema({
   name: {
     type: String,
@@ -80,6 +84,3 @@ module.exports = {
   Contact: Contact,
   Dates: Dates
 };
-
-
-
