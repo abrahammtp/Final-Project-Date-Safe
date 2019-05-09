@@ -1,6 +1,43 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-// Create Schemas for user, who they are going on a date with and emergency contacts
+const DatesSchema = require("./Date");
+const ContactsSchema = require('./Contact');
+// Create Schema for a new user
+
+const DatesSchema = new Schema({
+  dateName: {
+    type: String,
+    required: false
+  },
+  dateNumber: {
+    type: String,
+    required: false
+  },
+  metThrough: {
+    type: String,
+    required: false
+  },
+  dateDescription: {
+    type: String,
+    required: false
+  }
+});
+
+const ContactsSchema = new Schema({
+  contactName: {
+    type: String,
+    required: false
+  },
+  contactNumber: {
+    type: String,
+    required: false
+  },
+  relationship: {
+    type: String,
+    required: false
+  }
+});
+
 const UserSchema = new Schema({
   name: {
     type: String,
@@ -30,43 +67,11 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  // dates: [DatesSchema],
-  // contacts: [ContactsSchema]
+  dates: [DatesSchema],
+  contacts: [ContactsSchema]
 });
 
-const DatesSchema = new Schema({
-  name: {
-    type: String,
-    required: true
-  },
-  number: {
-    type: String,
-    required: true
-  },
-  metThrough: {
-    type: String,
-    required: true
-  },
-  dateDescription: {
-    type: String,
-    required: true
-  }
-});
+const User = mongoose.model("User", UserSchema);
 
-const ContactsSchema = new Schema({
-  name: {
-    type: String,
-    required: true
-  },
-  number: {
-    type: String,
-    required: true
-  },
-  relationship: {
-    type: String,
-    required: true
-  }
-});
-module.exports = User = mongoose.model("users", UserSchema);
-module.exports = contacts = mongoose.model("users", ContactsSchema);
-module.exports = dates = mongoose.model("users", DatesSchema);
+module.exports = User;
+
