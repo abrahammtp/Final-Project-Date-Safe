@@ -1,9 +1,9 @@
-const db = require("../models/Date");
+const { Dates } = require("../models/User");
 
 // Defining methods for datesControllers
 module.exports = {
     findAll: function (req, res) {
-        db.Dates.find(req.query)
+        Dates.find(req.query)
             .then(dbDates => res.json(dbDates))
             .catch(err => res.status(422).json(err));
     },
@@ -13,17 +13,17 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     create: function (req, res) {
-        db.Dates.create(req.body)
+        Dates.create(req.body)
             .then(dbDates => res.json(dbDates))
             .catch(err => res.status(422).json(err));
     },
     update: function (req, res) {
-        db.Dates.findOneAndUpdate({ id: req.params.id }, req, body)
+        Dates.findOneAndUpdate({ id: req.params.id }, req, body)
             .then(dbDates => res.json(dbDates))
             .catch(err => res.status(422).json(err));
     },
     remove: function (req, res) {
-        db.Dates.findById(req.params.id)
+        Dates.findById(req.params.id)
             .then(dbDates => dbDates.remove())
             .then(dbDates => res.json(dbDates))
             .catch(err => res.status(422).json(err));
