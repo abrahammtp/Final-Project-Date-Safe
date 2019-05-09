@@ -3,7 +3,9 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const app = express();
 const passport = require("passport");
-const path = require("path")
+const path = require("path");
+const datesRoute = require("./routes/api/dates");
+const contactsRoute = require("./routes/api/contacts");
 
 const users = require("./routes/api/users");
 
@@ -31,6 +33,8 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
+app.use("/api/contacts", contactsRoute);
+app.use("/api/dates", datesRoute);
 
 //Server Static assests if we're in production
 if (process.env.NODE_ENV === 'production') {

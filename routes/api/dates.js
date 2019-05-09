@@ -11,6 +11,6 @@ router
     .route("/:id")
     .get(datesController.findById)
     .put(datesController.update)
-    .delete(datesController.delete);
+    .delete(datesController.remove);
 
 module.exports = router;
