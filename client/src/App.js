@@ -7,7 +7,6 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 import "./App.css";
-import Navbar from "./components/layout/Navbar/Navbar"
 import Splash from "./pages/splash/splash"
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -41,7 +40,6 @@ function App() {
     <Provider store={store}>
       <Router>
         <div className="App">
-          <Navbar />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/" component={Splash} />
@@ -50,7 +48,6 @@ function App() {
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
           </Switch>
         </div>
-        <Footer />
       </Router>
     </Provider>
   );

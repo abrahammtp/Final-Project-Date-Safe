@@ -23,6 +23,10 @@ const DatesSchema = new Schema({
   dateDescription: {
     type: String,
     required: false
+  },
+  dateAddress: {
+    type: String,
+    required: false
   }
 });
 

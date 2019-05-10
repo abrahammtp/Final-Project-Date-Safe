@@ -4,12 +4,15 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Navbar from "./Navbar/Navbar";
 import { Row, Container, Col } from 'react-grid-system';
+
+import "./style.css"
 import Contacts from "./Contacts";
 
 class Dashboard extends Component {
   constructor() {
     super();
     this.state = {
+      id: "",
       dateName: "",
       dateNumber: "",
       metThrough: "",
@@ -18,106 +21,188 @@ class Dashboard extends Component {
       errors: {}
     };
   }
-  onChange = e => {
-    this.setState({ [e.target.id]: e.target.value });
-  };
+
 
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
   };
-
+  onChange = e => {
+    this.setState({ [e.target.id]: e.target.value });
+  };
   onSubmit = e => {
     e.preventDefault();
+
+    // console.log("User ID: ", uid);
+
+    //set state here of id to auth.id
+    // this.setState({id:uid});
+
     const userDate = {
-      id: this.user.id,
-      dateName: this.state.dateName
+      id: this.state.id,
+      dateName: this.state.dateName,
+      dateNumber: this.state.dateNumber,
+      metThrough: this.state.metThrough,
+      dateDescription: this.state.dateDescription,
+      dateAddress: this.state.dateAddress
     }
+    console.log(userDate)
   }
+
 
 
   render() {
     const { user } = this.props.auth;
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = window.M.Modal.init(elems);
-  });
+    var userId = user.id
+
+
+    console.log(userId)
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.modal');
+      // eslint-disable-next-line
+      var instances = window.M.Modal.init(elems);
+    });
 
     return (
       <div>
         <Navbar />
-        <Container fluid style={{ lineHeight: '100px' }}>
-          <Row>
-            <Col debug>
-              <Container fluid style={{ lineHeight: '64px' }}>
+        <Container>
+          <Row className="topRow">
+            <Col>
+              <Container className="container">
+
                 <Row>
-                  <Col debug>
-                    {/* Modal Trigger */}
-
-                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">New Date</a>
-
-                    <div id="modal1" class="modal">
-                      <div class="modal-content">
-                        <h4>Create a new date!</h4>
-                        <form onSubmit={this.onSubmit}>
-                        <label htmlFor="text">Name of your date</label>
-                        <input
+                  <h4 className="newDateHeader">Going on a date?</h4>
+                  {/* <Col debug> */}
+                  {/* Modal Trigger */}
+                </Row>
+                <Row>
+                  <a class="waves-effect waves-light btn modal-trigger newDateButton" href="#modal1">New Date</a>
+                </Row>
+                <div id="modal1" class="modal">
+                  <div class="modal-content">
+                    <h4>Create a new date!</h4>
+                    <form onSubmit={this.onSubmit}>
+                      <label htmlFor="text">What is your date's name?</label>
+                      <input
                         onChange={this.onChange}
                         value={this.state.dateName}
                         id="dateName"
                         type="text"
-                        />
-                        </form>
-                      </div>
+                      />
+                      <label htmlFor="text">What is your date's phone number</label>
+                      <input
+                        onChange={this.onChange}
+                        value={this.state.dateNumber}
+                        id="dateNumber"
+                        type="text"
+                      />
+                      <label htmlFor="text">How did you meet?</label>
+                      <input
+                        onChange={this.onChange}
+                        value={this.state.metThrough}
+                        id="metThrough"
+                        type="text"
+                      />
+                      <label htmlFor="text">What does your date look like?</label>
+                      <input
+                        onChange={this.onChange}
+                        value={this.state.dateDescription}
+                        id="dateDescription"
+                        type="text"
+                      />
+                      <label htmlFor="text">Where are you going on your date?</label>
+                      <input
+                        onChange={this.onChange}
+                        value={this.state.dateAddress}
+                        id="dateAddress"
+                        type="text"
+                      />
                       <div class="modal-footer">
-                        <a href="#!" class="modal-close waves-effect waves-green btn">Submit</a>
+                        <button
+                          type="submit"
+                          className="btn modal-close waves-effect waves-green btn-flat"
+                          href="#!"
+                          value={this.state.id}
+                        >
+                          Submit
+                             </button>
                       </div>
-                    </div>
-                  </Col>
-                  <Col debug></Col>
-                  <Col debug></Col>
-                </Row>
+                    </form>
+                  </div>
+                </div>
+                {/* </Col> */}
+                {/* <Col debug></Col>
+                  <Col debug></Col> */}
+                {/* </Row> */}
               </Container>
             </Col>
-            <Col debug>
-              <Container fluid style={{ lineHeight: '80px' }}>
-                <Row>
-                  <Col debug></Col>
-                  <Col debug>
-                    <div>
-                      <p>Hello, {user.name.split(" ")[0]}!</p>
-                      <p>Hello, {user.id}!</p>
+            <Col>
+              <Container className="container">
 
-                      <p>Welcome to Date Safe</p>
-                      {/* <p>Address: {user.address.split(" ")[0]}</p>
+                <div className="userInfo">
+                  <p>Welcome to Date Safe</p>
+
+                  <p>Hello, {user.name.split(" ")[0]}!</p>
+                  {/* <p>Hello, {user.id}!</p> */}
+
+                  {/* <p>Address: {user.address.split(" ")[0]}</p>
                     <p>Phone Number: {user.number.split(" ")[0]}</p> */}
-                    </div>
-                  </Col>
-                </Row>
+                </div>
               </Container>
             </Col>
           </Row>
         </Container>
-        <br />
-        <Container fluid style={{ lineHeight: '300px' }}>
-          <Row debug>
-            <Col debug>
-              <Col fluid style={{ lineHeight: '150px' }}>Upcoming dates</Col>
-              <Col fluid style={{ lineHeight: '150px' }}>Previous dates</Col>
-            </Col>
-            <Col debug>
-              <Row>
-                <Col fluid style={{ lineHeight: '100px' }}>
-                  <Contacts />
+
+
+        <Container >
+
+          <Row className="bottomRow">
+            <Col>
+              <Container className="container">
+                <Col>
+                  <Col>
+                    <h5  className="dateOne">Upcoming dates</h5>
+                    <p className="dateOne1">Date on 05/22/2019</p>
+                    <p className="date1">Going to Barcade with Kelly</p>
+                  </Col>
+                  <Col>
+                    <h5>Previous dates</h5>
+                    <p className="dateOne1">Date on 04/18/2019</p>
+                    <p className="date1">Went to TopGolf with Jennifer and then went to The Cloak and Blaster</p>
+                    <p className="dateOne1">Date on 03/01/2019</p>
+                    <p className="date1">Went to The Orlando Improv with Fernanda</p>
+                    <p className="dateOne1">Date on 01/15/2019</p>
+                    <p className="date1">Went to Domu with Jennifer and then went to Lake Cherokee Park</p>
+                  </Col>
                 </Col>
-                <Col fluid style={{ lineHeight: '100px' }}></Col>
-                <Col fluid style={{ lineHeight: '100px' }}>Contacts</Col>
-              </Row>
+              </Container>
+            </Col>
+
+            <Col>
+              <Container className="container">
+                <Col>
+                  <h5  className="dateOne">Contacts</h5>
+                  <button className="waves-effect waves-light btn modal-trigger newContactButton">Add Contact</button>
+                  <Container className="contactCard">
+                    <p className="contactOne">Rodrigo</p>
+                    <p>Phone Number: 907-495-3693</p>
+                    <p>Relationship: Brother</p>
+                  </Container>
+                  <Container className="contactCard">
+                    <p className="contactOne">Sandra</p>
+                    <p>Phone Number: 658-848-2659</p>
+                    <p>Relationship: Friend</p>
+                  </Container>
+
+                </Col>
+              </Container>
             </Col>
           </Row>
         </Container>
-      </div>
+      </div >
     );
   }
 }
