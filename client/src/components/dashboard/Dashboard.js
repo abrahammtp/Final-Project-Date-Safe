@@ -144,6 +144,16 @@ class Dashboard extends Component {
               <Container className="userContainer">
 
                 <div className="userInfo">
+
+                  <img className="picture" src={require("./../../images/IMG_20180315_222930_177.jpg")} height="275" width="275"></img>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+
                   <p>Welcome to Date Safe</p>
 
                   <p>Hello, {user.name.split(" ")[0]}!</p>
@@ -164,7 +174,7 @@ class Dashboard extends Component {
               <Container className="userContainer">
                 <Col>
                   <Col>
-                    <h5  className="dateOne">Upcoming dates</h5>
+                    <h5 className="dateOne">Upcoming dates</h5>
                     <p className="dateOne1">Date on 05/22/2019</p>
                     <p className="date1">Going to Barcade with Kelly</p>
                   </Col>
@@ -184,8 +194,10 @@ class Dashboard extends Component {
             <Col>
               <Container className="userContainer">
                 <Col>
+
                   <h5  className="dateOne">Contacts</h5>
                   <Contacts />
+
                   <Container className="contactCard">
                     <p className="contactOne">Rodrigo</p>
                     <p>Phone Number: 907-495-3693</p>
