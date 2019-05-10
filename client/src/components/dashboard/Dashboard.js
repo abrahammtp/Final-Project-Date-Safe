@@ -55,6 +55,7 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
 
     var userId = user.id
+    console.log(user)
 
 
     console.log(userId)
@@ -71,7 +72,7 @@ class Dashboard extends Component {
         <Container>
           <Row className="topRow">
             <Col>
-              <Container className="container">
+              <Container className="userContainer">
 
                 <Row>
                   <h4 className="newDateHeader">Going on a date?</h4>
@@ -140,7 +141,7 @@ class Dashboard extends Component {
               </Container>
             </Col>
             <Col>
-              <Container className="container">
+              <Container className="userContainer">
 
                 <div className="userInfo">
                   <p>Welcome to Date Safe</p>
@@ -148,8 +149,8 @@ class Dashboard extends Component {
                   <p>Hello, {user.name.split(" ")[0]}!</p>
                   {/* <p>Hello, {user.id}!</p> */}
 
-                  {/* <p>Address: {user.address.split(" ")[0]}</p>
-                    <p>Phone Number: {user.number.split(" ")[0]}</p> */}
+                  {/* <p>Address: {user.address.split(" ")[0]}</p> */}
+                    <p>Phone Number: {user.number}</p>
                 </div>
               </Container>
             </Col>
@@ -158,10 +159,9 @@ class Dashboard extends Component {
 
 
         <Container >
-
           <Row className="bottomRow">
             <Col>
-              <Container className="container">
+              <Container className="userContainer">
                 <Col>
                   <Col>
                     <h5  className="dateOne">Upcoming dates</h5>
@@ -182,10 +182,10 @@ class Dashboard extends Component {
             </Col>
 
             <Col>
-              <Container className="container">
+              <Container className="userContainer">
                 <Col>
                   <h5  className="dateOne">Contacts</h5>
-                  <button className="waves-effect waves-light btn modal-trigger newContactButton">Add Contact</button>
+                  <Contacts />
                   <Container className="contactCard">
                     <p className="contactOne">Rodrigo</p>
                     <p>Phone Number: 907-495-3693</p>
@@ -196,8 +196,8 @@ class Dashboard extends Component {
                     <p>Phone Number: 658-848-2659</p>
                     <p>Relationship: Friend</p>
                   </Container>
-
                 </Col>
+
               </Container>
             </Col>
           </Row>
