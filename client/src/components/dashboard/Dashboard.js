@@ -81,7 +81,6 @@ class Dashboard extends Component {
                 </Row>
                 <Row>
                   <a class="waves-effect waves-light btn modal-trigger newDateButton" href="#modal1">New Date</a>
-                </Row>
                 <div id="modal1" class="modal">
                   <div class="modal-content">
                     <h4>Create a new date!</h4>
@@ -92,42 +91,42 @@ class Dashboard extends Component {
                         value={this.state.dateName}
                         id="dateName"
                         type="text"
-                      />
+                        />
                       <label htmlFor="text">What is your date's phone number</label>
                       <input
                         onChange={this.onChange}
                         value={this.state.dateNumber}
                         id="dateNumber"
                         type="text"
-                      />
+                        />
                       <label htmlFor="text">How did you meet?</label>
                       <input
                         onChange={this.onChange}
                         value={this.state.metThrough}
                         id="metThrough"
                         type="text"
-                      />
+                        />
                       <label htmlFor="text">What does your date look like?</label>
                       <input
                         onChange={this.onChange}
                         value={this.state.dateDescription}
                         id="dateDescription"
                         type="text"
-                      />
+                        />
                       <label htmlFor="text">Where are you going on your date?</label>
                       <input
                         onChange={this.onChange}
                         value={this.state.dateAddress}
                         id="dateAddress"
                         type="text"
-                      />
+                        />
                       <div class="modal-footer">
                         <button
                           type="submit"
                           className="btn modal-close waves-effect waves-green btn-flat"
                           href="#!"
                           value={this.state.id}
-                        >
+                          >
                           Submit
                              </button>
                       </div>
@@ -138,6 +137,7 @@ class Dashboard extends Component {
                 {/* <Col debug></Col>
                   <Col debug></Col> */}
                 {/* </Row> */}
+                  </Row>
               </Container>
             </Col>
             <Col>
@@ -145,7 +145,7 @@ class Dashboard extends Component {
 
                   <Col>
                 <div className="userInfo1">
-                    <img className="picture" src={require("./../../images/IMG_20180315_222930_177.jpg")} height="275" width="275"></img>
+                    <img className="picture" src={require("./../../images/IMG_20180315_222930_177.jpg")} height="275" width="275" alt="user"></img>
                 </div>
                   </Col>
                   <Col>
