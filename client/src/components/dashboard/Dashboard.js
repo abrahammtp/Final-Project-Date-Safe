@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Navbar from "./Navbar/Navbar";
 import { Row, Container, Col } from 'react-grid-system';
+import Contacts from "./Contacts";
 
 class Dashboard extends Component {
   constructor() {
@@ -108,7 +109,7 @@ class Dashboard extends Component {
             <Col debug>
               <Row>
                 <Col fluid style={{ lineHeight: '100px' }}>
-                  <button>Add a new emergency contact</button>
+                  <Contacts />
                 </Col>
                 <Col fluid style={{ lineHeight: '100px' }}></Col>
                 <Col fluid style={{ lineHeight: '100px' }}>Contacts</Col>
