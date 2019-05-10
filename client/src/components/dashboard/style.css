@@ -46,5 +46,11 @@
 
 .picture {
 	margin-right: 37px;
-	margin-top: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	max-height: 150px;
+	max-width: 150px;
+}
+.userInfo1{
+float: left;
 }
