@@ -4,7 +4,9 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Navbar from "./Navbar/Navbar";
 import { Row, Container, Col } from 'react-grid-system';
+
 import "./style.css"
+import Contacts from "./Contacts";
 
 class Dashboard extends Component {
   constructor() {
@@ -178,6 +180,7 @@ class Dashboard extends Component {
                 </Col>
               </Container>
             </Col>
+
             <Col>
               <Container className="container">
                 <Col>
@@ -193,6 +196,7 @@ class Dashboard extends Component {
                     <p>Phone Number: 658-848-2659</p>
                     <p>Relationship: Friend</p>
                   </Container>
+
                 </Col>
               </Container>
             </Col>
