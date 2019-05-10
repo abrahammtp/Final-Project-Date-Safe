@@ -1,5 +1,5 @@
 .test {
-  margin: 0;
+  margin-top: 0;
   padding: 0;
   font-family: sans-serif;
   background: url(../../images/Wallpaper.png) no-repeat center center fixed;
@@ -7,7 +7,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding-bottom: 220px
+  padding-bottom: 180px;
 }
 
 .info-container {

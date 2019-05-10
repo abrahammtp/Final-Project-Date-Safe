@@ -1,14 +1,16 @@
-import React from "react";
+import React, { Component } from "react";
 import "./footer.css"
 
-function Footer() {
-  return (
-    <footer>
-      <p className="pull-right">
-      Proudly built using React.js
+class Footer extends Component {
+  render() {
+    return (
+      <footer>
+        <p className="pull-right">
+          Proudly built by Francisco Cruz and Abraham Torres Pinto using React.js
       </p>
-    </footer>
-  );
+      </footer>
+    );
+  }
 }
 
 export default Footer;
