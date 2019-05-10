@@ -47,6 +47,7 @@ function App() {
           <Switch>
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
           </Switch>
+          <Footer />
         </div>
       </Router>
     </Provider>
