@@ -46,7 +46,7 @@ class Contact extends Component {
         const { user } = this.props.auth;
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.modal');
-    // eslint-disable-next-line
+            // eslint-disable-next-line
             var instances = window.M.Modal.init(elems);
         });
 
@@ -67,14 +67,14 @@ class Contact extends Component {
                                     value={this.state.contactName}
                                     id="contactName"
                                     type="text"
-                                    />
+                                />
                                 <label htmlFor="text">Contact's phone number</label>
                                 <input
                                     onChange={this.onChange}
                                     value={this.state.contactNumber}
                                     id="contactNumber"
                                     type="text"
-                                    />
+                                />
                                 <label htmlFor="text">Relationship with the contact</label>
                                 <input
                                     onChange={this.onChange}
@@ -82,14 +82,15 @@ class Contact extends Component {
                                     id="contactRelationship"
                                     type="text"
 
+                                />
                                 <div className="modal-footer">
                                     <button href="#!" type="submit" className="modal-close waves-effect waves-green btn">Submit</button>
-                 </div>
+                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         )
     }
 }
