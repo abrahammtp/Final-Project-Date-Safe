@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import { logoutUser } from "../../actions/authActions";
 
 class Contact extends Component {
@@ -54,10 +55,11 @@ class Contact extends Component {
             <div>
                 {/* Modal Trigger */}
                 <div>
+                    <Link to="/contacts">
+                        <button className="waves-effect waves-light btn newContactButton" href="#modal2">New contact</button>
+                    </Link>
 
-                    <a className="waves-effect waves-light btn modal-trigger newContactButton" href="#modal2">New contact</a>
-
-                    <div id="modal2" className="modal">
+                    {/* <div id="modal2" className="modal">
                         <div className="modal-content">
                             <h4>Add a new contact</h4>
                             <form onSubmit={this.onSubmit}>
@@ -88,7 +90,7 @@ class Contact extends Component {
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div >
         )

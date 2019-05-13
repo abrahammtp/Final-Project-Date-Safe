@@ -13,7 +13,8 @@ import Login from "./components/auth/Login";
 import Footer from "./components/layout/Footer/footer";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
-import Shared from "./pages/SharedPage/sharedPage";
+import Contacts from "./pages/contacts/contacts";
+// import Shared from "./pages/SharedPage/sharedPage";
 // import userPage from "./pages/userPage";
 
 // Check for token to keep user logged in
@@ -43,7 +44,10 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/" component={Splash} />
-          <Route exact path="/shared" component={Shared} />
+          {/* <Route exact path="/shared" component={Shared} /> */}
+          <Switch>
+            <PrivateRoute exact path="/contacts" component={Contacts} />
+          </Switch>
           <Switch>
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
           </Switch>
