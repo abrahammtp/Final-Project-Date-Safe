@@ -22,7 +22,6 @@ class Dashboard extends Component {
     };
   }
 
-
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
@@ -37,9 +36,10 @@ class Dashboard extends Component {
 
     //set state here of id to auth.id
     // this.setState({id:uid});
-
+    const { user }  = this.props.auth;
+    console.log(user)
     const userDate = {
-      id: this.state.id,
+      id: user.id,
       dateName: this.state.dateName,
       dateNumber: this.state.dateNumber,
       metThrough: this.state.metThrough,
@@ -55,10 +55,10 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
 
     var userId = user.id
-    console.log(user)
+    // console.log(user)
 
 
-    console.log(userId)
+    // console.log(userId)
 
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.modal');
