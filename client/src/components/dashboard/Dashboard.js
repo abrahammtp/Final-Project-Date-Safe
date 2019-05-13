@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Navbar from "./Navbar/Navbar";
 import { Row, Container, Col } from 'react-grid-system';
-
 import "./style.css"
 import Contacts from "./Contacts";
 import Date from "./Dates"
