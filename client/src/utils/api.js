@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export default {
+  // Dates
   // Gets all saved dates
   getSavedDates: function() {
     return axios.get("/api/dates");
@@ -12,5 +13,18 @@ export default {
   // Saves a date to the database
   saveDate: function(dateData) {
     return axios.post("/api/dates", dateData);
-  }
+  },
+
+  // Contacts
+  // Gets all saved contacts
+  getSavedContacts: function() {
+    return axios.get("/api/contacts");
+  },
+  // Deletes the saved contact with the given ud
+  deleteContacts: function(id) {
+    return axios.delete("/api/contacts/" + id);
+  },
+  saveContact: function(contactData) {
+    return axios.post("/api/contacts", contactData);
+  },
 };
