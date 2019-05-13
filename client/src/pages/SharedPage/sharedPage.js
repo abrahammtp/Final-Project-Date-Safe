@@ -1,49 +1,51 @@
-import React, { Component } from 'react';
-// import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
-import './style.css'
 
-import Map from '../../components/MapsAPI/maps';
+// import React, { Component } from './node_modules/react';
+// // import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+// import './style.css'
 
-export class Shared extends Component {
-  // state = {
-  //   showingInfoWindow: false,
-  //   activeMarker: {},
-  //   selectedPlace: {}
-  // };
 
-  // onMarkerClick = (props, marker, e) =>
-  //   this.setState({
-  //     selectedPlace: props,
-  //     activeMarker: marker,
-  //     showingInfoWindow: true
-  //   });
+// import Map from '../../components/MapsAPI/maps';
 
-  // onClose = props => {
-  //   if (this.state.showingInfoWindow) {
-  //     this.setState({
-  //       showingInfoWindow: false,
-  //       activeMarker: null
-  //     });
-  //   }
-  // };
+// export class Shared extends Component {
+//   // state = {
+//   //   showingInfoWindow: false,
+//   //   activeMarker: {},
+//   //   selectedPlace: {}
+//   // };
 
-  render() {
-    return (
-      <Map />
-      // centerAroundMap google={this.props.google}>
-      //   <Marker onClick={this.onMarkerClick} name={'current location'} />
-      //   <InfoWindow
-      //     marker={this.state.activeMarker}
-      //     visible={this.state.showingInfoWindow}
-      //     onClose={this.onClose}
-      //   >
-      //     <div>
-      //       <h4>{this.state.selectedPlace.name}</h4>
-      //     </div>
-      //   </InfoWindow>
-      // </Map>
-    );
-  }
-}
+//   // onMarkerClick = (props, marker, e) =>
+//   //   this.setState({
+//   //     selectedPlace: props,
+//   //     activeMarker: marker,
+//   //     showingInfoWindow: true
+//   //   });
 
-export default Shared
+//   // onClose = props => {
+//   //   if (this.state.showingInfoWindow) {
+//   //     this.setState({
+//   //       showingInfoWindow: false,
+//   //       activeMarker: null
+//   //     });
+//   //   }
+//   // };
+
+//   render() {
+//     return (
+//       <Map />
+//       // centerAroundMap google={this.props.google}>
+//       //   <Marker onClick={this.onMarkerClick} name={'current location'} />
+//       //   <InfoWindow
+//       //     marker={this.state.activeMarker}
+//       //     visible={this.state.showingInfoWindow}
+//       //     onClose={this.onClose}
+//       //   >
+//       //     <div>
+//       //       <h4>{this.state.selectedPlace.name}</h4>
+//       //     </div>
+//       //   </InfoWindow>
+//       // </Map>
+//     );
+//   }
+// }
+
+// export default Shared
