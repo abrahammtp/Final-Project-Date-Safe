@@ -7,59 +7,11 @@ import { Row, Container, Col } from 'react-grid-system';
 
 import "./style.css"
 import Contacts from "./Contacts";
+import Date from "./Dates"
 
 class Dashboard extends Component {
-  constructor() {
-    super();
-    this.state = {
-      id: "",
-      dateName: "",
-      dateNumber: "",
-      metThrough: "",
-      dateDescription: "",
-      dateAddress: "",
-      errors: {}
-    };
-  }
-
-  onLogoutClick = e => {
-    e.preventDefault();
-    this.props.logoutUser();
-  };
-  onChange = e => {
-    this.setState({ [e.target.id]: e.target.value });
-  };
-  onSubmit = e => {
-    e.preventDefault();
-
-    // console.log("User ID: ", uid);
-
-    //set state here of id to auth.id
-    // this.setState({id:uid});
-    const { user }  = this.props.auth;
-    console.log(user)
-    const userDate = {
-      id: user.id,
-      dateName: this.state.dateName,
-      dateNumber: this.state.dateNumber,
-      metThrough: this.state.metThrough,
-      dateDescription: this.state.dateDescription,
-      dateAddress: this.state.dateAddress
-    }
-    console.log(userDate)
-  }
-
-
-
   render() {
     const { user } = this.props.auth;
-
-    var userId = user.id
-    // console.log(user)
-
-
-    // console.log(userId)
-
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.modal');
       // eslint-disable-next-line
@@ -79,76 +31,19 @@ class Dashboard extends Component {
                   {/* <Col debug> */}
                   {/* Modal Trigger */}
                 </Row>
-                <Row>
-                  <a class="waves-effect waves-light btn modal-trigger newDateButton" href="#modal1">New Date</a>
-                <div id="modal1" class="modal">
-                  <div class="modal-content">
-                    <h4>Create a new date!</h4>
-                    <form onSubmit={this.onSubmit}>
-                      <label htmlFor="text">What is your date's name?</label>
-                      <input
-                        onChange={this.onChange}
-                        value={this.state.dateName}
-                        id="dateName"
-                        type="text"
-                        />
-                      <label htmlFor="text">What is your date's phone number</label>
-                      <input
-                        onChange={this.onChange}
-                        value={this.state.dateNumber}
-                        id="dateNumber"
-                        type="text"
-                        />
-                      <label htmlFor="text">How did you meet?</label>
-                      <input
-                        onChange={this.onChange}
-                        value={this.state.metThrough}
-                        id="metThrough"
-                        type="text"
-                        />
-                      <label htmlFor="text">What does your date look like?</label>
-                      <input
-                        onChange={this.onChange}
-                        value={this.state.dateDescription}
-                        id="dateDescription"
-                        type="text"
-                        />
-                      <label htmlFor="text">Where are you going on your date?</label>
-                      <input
-                        onChange={this.onChange}
-                        value={this.state.dateAddress}
-                        id="dateAddress"
-                        type="text"
-                        />
-                      <div class="modal-footer">
-                        <button
-                          type="submit"
-                          className="btn modal-close waves-effect waves-green btn-flat"
-                          href="#!"
-                          value={this.state.id}
-                          >
-                          Submit
-                             </button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-                {/* </Col> */}
-                {/* <Col debug></Col>
-                  <Col debug></Col> */}
-                {/* </Row> */}
-                  </Row>
+                  <Date />
+
               </Container>
             </Col>
             <Col>
               <Container className="userContainer">
 
-                  <Col>
-                <div className="userInfo1">
+                <Col>
+                  <div className="userInfo1">
                     <img className="picture" src={require("./../../images/IMG_20180315_222930_177.jpg")} height="275" width="275" alt="user"></img>
-                </div>
-                  </Col>
-                  <Col>
+                  </div>
+                </Col>
+                <Col>
                   <div className="userInfo">
 
                     <p>Welcome to Date Safe</p>
@@ -159,7 +54,7 @@ class Dashboard extends Component {
                     <p>Address: {user.address}</p>
                     <p>Phone Number: {user.number}</p>
                   </div>
-                  </Col>
+                </Col>
               </Container>
             </Col>
           </Row>
