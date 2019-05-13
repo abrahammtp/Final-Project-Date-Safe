@@ -7,12 +7,14 @@ class Contact extends Component {
     constructor() {
         super();
         this.state = {
+            id: "",
             contactName: "",
             contactNumber: "",
-            relationship: "",
+            contactRelationship: "",
             errors: {}
         };
-    }
+    };
+
     onChange = e => {
         this.setState({
             [e.target.id]:
@@ -28,16 +30,20 @@ class Contact extends Component {
     onSubmit = e => {
         e.preventDefault();
         const userContact = {
-            // id: this.user.id,
+            id: this.user.id,
             contactName: this.state.contactName,
             contactNumber: this.state.contactNumber,
-            relationship: this.state.relationship
+            contactRelationship: this.state.relationship
         }
         console.log(userContact);
     }
 
     render() {
         const { user } = this.props.auth;
+
+        var userId = user.id
+        console.log(user);
+        console.log(userId);
 
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.modal');
@@ -48,7 +54,7 @@ class Contact extends Component {
             <div>
                 {/* Modal Trigger */}
                 <div>
-                    <a class="waves-effect waves-light btn modal-trigger" href="#modal2">New contact</a>
+                    <a class="waves-effect waves-light btn modal-trigger newContactButton" href="#modal2">New contact</a>
 
                     <div id="modal2" class="modal">
                         <div class="modal-content">
@@ -60,23 +66,23 @@ class Contact extends Component {
                                     value={this.state.contactName}
                                     id="contactName"
                                     type="text"
-                                />
+                                    />
                                 <label htmlFor="text">Contact's phone number</label>
                                 <input
                                     onChange={this.onChange}
                                     value={this.state.contactNumber}
                                     id="contactNumber"
                                     type="text"
-                                />
+                                    />
                                 <label htmlFor="text">Relationship with the contact</label>
                                 <input
                                     onChange={this.onChange}
                                     value={this.state.relationship}
                                     id="contactRelationship"
                                     type="text"
-                                />
-                                <div class="modal-footer">
-                                    <button href="#!" type="submit" class="modal-close waves-effect waves-green btn">Submit</button>
+                                    />
+                                <div className="modal-footer">
+                                    <button href="#!" type="submit" className="btn modal-close waves-effect waves-green btn-flat">Submit</button>
                                 </div>
                             </form>
                         </div>
