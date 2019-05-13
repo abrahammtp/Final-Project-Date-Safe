@@ -156,7 +156,7 @@ class Dashboard extends Component {
                     <p>Hello, {user.name.split(" ")[0]}!</p>
                     {/* <p>Hello, {user.id}!</p> */}
 
-                    {/* <p>Address: {user.address.split(" ")[0]}</p> */}
+                    <p>Address: {user.address}</p>
                     <p>Phone Number: {user.number}</p>
                   </div>
                   </Col>
