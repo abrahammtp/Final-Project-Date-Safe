@@ -5,7 +5,6 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
-
 import "./App.css";
 import Splash from "./pages/splash/splash"
 import Register from "./components/auth/Register";
@@ -13,8 +12,9 @@ import Login from "./components/auth/Login";
 import Footer from "./components/layout/Footer/footer";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+import Dates from "./pages/dates/dates"
 import Contacts from "./pages/contacts/contacts";
-// import Shared from "./pages/SharedPage/sharedPage";
+
 // import userPage from "./pages/userPage";
 
 // Check for token to keep user logged in
@@ -50,6 +50,7 @@ function App() {
           </Switch>
           <Switch>
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/dates" component={Dates} />
           </Switch>
           <Footer />
         </div>

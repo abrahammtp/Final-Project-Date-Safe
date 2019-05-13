@@ -5,7 +5,6 @@ import { logoutUser } from "../../actions/authActions";
 import "./style.css"
 import api from "../../utils/api"
 
-
 class Date extends Component {
     constructor() {
         super();
@@ -52,18 +51,14 @@ class Date extends Component {
     render() {
         // eslint-disable-next-line
         const { user } = this.props.auth;
-
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.modal');
-                // eslint-disable-next-line
-            var instances = window.M.Modal.init(elems);
-        });
-
+            // var elems = document.querySelectorAll('.modal');
+            // // eslint-disable-next-line
+            // var instances = window.M.Modal.init(elems);
         return (
             <div>
-                <a className="waves-effect waves-light btn modal-trigger" href="#modal1">New Date</a>
-                <div id="modal1" className="modal">
-                    <div className="modal-content">
+                <button data-target="modal1" data-toggle="modal" class="btn modal-trigger">Modal</button>
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
                         <h4>Create a new date!</h4>
                         <form onSubmit={this.onSubmit}>
                             <label htmlFor="text">What is your date's name?</label>

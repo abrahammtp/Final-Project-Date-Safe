@@ -1,6 +1,8 @@
+
 // import React, { Component } from './node_modules/react';
 // // import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 // import './style.css'
+
 
 // import Map from '../../components/MapsAPI/maps';
 

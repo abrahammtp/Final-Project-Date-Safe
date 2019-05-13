@@ -6,17 +6,13 @@ import Navbar from "./Navbar/Navbar";
 import { Row, Container, Col } from 'react-grid-system';
 import "./style.css"
 import Contacts from "./Contacts";
-import Date from "./Dates"
+import { Link } from "react-router-dom";
+
+
 
 class Dashboard extends Component {
   render() {
     const { user } = this.props.auth;
-    document.addEventListener('DOMContentLoaded', function () {
-      var elems = document.querySelectorAll('.modal');
-      // eslint-disable-next-line
-      var instances = window.M.Modal.init(elems);
-    });
-
     return (
       <div>
         <Navbar />
@@ -30,8 +26,9 @@ class Dashboard extends Component {
                   {/* <Col debug> */}
                   {/* Modal Trigger */}
                 </Row>
-                  <Date />
-
+                <Link to="/dates">
+                <button className="btn waves-effect" type="submit" name="action">New Date</button>
+              </Link>
               </Container>
             </Col>
             <Col>
