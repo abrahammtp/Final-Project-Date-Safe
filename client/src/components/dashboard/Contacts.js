@@ -27,8 +27,10 @@ class Contact extends Component {
 
     onSubmit = e => {
         e.preventDefault();
+        const { user }  = this.props.auth;
+        console.log(user)
         const userContact = {
-            // id: this.user.id,
+            id: user.id,
             contactName: this.state.contactName,
             contactNumber: this.state.contactNumber,
             relationship: this.state.relationship
