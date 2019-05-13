@@ -29,27 +29,24 @@ class Contact extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-        const { user }  = this.props.auth;
+        const { user } = this.props.auth;
         console.log(user)
         const userContact = {
 
             id: user.id,
             contactName: this.state.contactName,
             contactNumber: this.state.contactNumber,
-            contactRelationship: this.state.relationship
+            contactRelationship: this.state.contactRelationship
         }
         console.log(userContact);
     }
 
     render() {
+        // eslint-disable-next-line
         const { user } = this.props.auth;
-
-        var userId = user.id
-        console.log(user);
-        console.log(userId);
-
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.modal');
+    // eslint-disable-next-line
             var instances = window.M.Modal.init(elems);
         });
 
@@ -57,10 +54,11 @@ class Contact extends Component {
             <div>
                 {/* Modal Trigger */}
                 <div>
-                    <a class="waves-effect waves-light btn modal-trigger newContactButton" href="#modal2">New contact</a>
 
-                    <div id="modal2" class="modal">
-                        <div class="modal-content">
+                    <a className="waves-effect waves-light btn modal-trigger newContactButton" href="#modal2">New contact</a>
+
+                    <div id="modal2" className="modal">
+                        <div className="modal-content">
                             <h4>Add a new contact</h4>
                             <form onSubmit={this.onSubmit}>
                                 <label htmlFor="text">Name of your contact</label>
@@ -83,10 +81,10 @@ class Contact extends Component {
                                     value={this.state.relationship}
                                     id="contactRelationship"
                                     type="text"
-                                    />
+
                                 <div className="modal-footer">
-                                    <button href="#!" type="submit" className="btn modal-close waves-effect waves-green btn-flat">Submit</button>
-                                </div>
+                                    <button href="#!" type="submit" className="modal-close waves-effect waves-green btn">Submit</button>
+                 </div>
                             </form>
                         </div>
                     </div>
