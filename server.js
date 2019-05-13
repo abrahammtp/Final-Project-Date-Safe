@@ -7,6 +7,7 @@ const path = require("path");
 const datesRoute = require("./routes/api/dates");
 const contactsRoute = require("./routes/api/contacts");
 
+
 const users = require("./routes/api/users");
 
 // Bodyparser middleware
@@ -32,9 +33,10 @@ app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
 // Routes
+
 app.use("/api/users", users);
-// app.use("/api/contacts", contactsRoute);
-// app.use("/api/dates", datesRoute);
+ app.use("/api/contacts", contactsRoute);
+ app.use("/api/dates", datesRoute);
 
 //Server Static assests if we're in production
 if (process.env.NODE_ENV === 'production') {

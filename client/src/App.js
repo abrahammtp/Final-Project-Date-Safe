@@ -14,6 +14,7 @@ import Footer from "./components/layout/Footer/footer";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Shared from "./pages/SharedPage/sharedPage";
+import Dates from "./pages/dates/dates"
 // import userPage from "./pages/userPage";
 
 // Check for token to keep user logged in
@@ -46,6 +47,7 @@ function App() {
           <Route exact path="/shared" component={Shared} />
           <Switch>
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/dates" component={Dates} />
           </Switch>
           <Footer />
         </div>
