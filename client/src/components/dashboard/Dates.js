@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logoutUser } from "../../actions/authActions";
 import "./style.css"
+import api from "../../utils/api"
 
 
 class Date extends Component {
@@ -35,15 +36,15 @@ class Date extends Component {
         // this.setState({id:uid});
         const { user } = this.props.auth;
         console.log(user)
-        const userDate = {
+        api.saveDate({
             id: user.id,
             dateName: this.state.dateName,
             dateNumber: this.state.dateNumber,
             metThrough: this.state.metThrough,
             dateDescription: this.state.dateDescription,
             dateAddress: this.state.dateAddress
-        }
-        console.log(userDate)
+        }).then(console.log("done!"))
+
     }
 
 
@@ -60,7 +61,7 @@ class Date extends Component {
 
         return (
             <div>
-                <a className="waves-effect waves-light btn modal-trigger newDateButton" href="#modal1">New Date</a>
+                <a className="waves-effect waves-light btn modal-trigger" href="#modal1">New Date</a>
                 <div id="modal1" className="modal">
                     <div className="modal-content">
                         <h4>Create a new date!</h4>
