@@ -38,6 +38,7 @@ class Contact extends Component {
             userId: user.id,
             contactName: this.state.contactName,
             contactNumber: this.state.contactNumber,
+
             relationship: this.state.relationship
         });     //.then(() => this.getContacts());
         console.log("Done");
