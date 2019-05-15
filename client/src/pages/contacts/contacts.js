@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import api from "../../utils/api";
 import { logoutUser } from "../../actions/authActions";
@@ -78,10 +78,10 @@ class Contact extends Component {
                             id="relationship"
                             type="text"
                         />
-                        <div className="form-button">
-                            {/* <Link to="/dashboard"> */}
+                        <div className="form-button2">
+                            <Link to="/dashboard">
                                 <button href="#!" type="submit" className="btn waves-effect waves-green btn" name="action">Submit</button>
-                            {/* </Link> */}
+                            </Link>
                         </div>
                     </form>
                 </div>
