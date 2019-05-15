@@ -23,6 +23,10 @@ const ContactsSchema = new Schema({
   relationship: {
     type: String,
     required: false
+  },
+  activeContact: {
+    type: Boolean,
+    default: false
   }
 });
 
