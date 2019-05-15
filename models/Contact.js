@@ -4,6 +4,10 @@ const Schema = mongoose.Schema;
 // Create Schema for a new contact
 
 const ContactsSchema = new Schema({
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  },
   _nameId: {
     type: Schema.Types.ObjectId,
     ref: "User"
