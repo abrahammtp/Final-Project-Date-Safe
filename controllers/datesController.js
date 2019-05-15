@@ -4,12 +4,12 @@ var db = require("../models");
 module.exports = {
 
     find: function (req, res) {
-        db.dates.find({ _nameId: req.params.id }).then(function (dbDates) {
+        db.Dates.find({ _nameId: req.params.id }).then(function (dbDates) {
             res.json(dbDates);
         });
     },
     create: function (req, res) {
-        db.dates.create(req.body)
+        db.Date.create(req.body)
             .then(dbDates => res.json(dbDates))
             .catch(err => res.status(422).json(err));
     },

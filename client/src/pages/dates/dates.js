@@ -9,7 +9,7 @@ class Date extends Component {
     constructor() {
         super();
         this.state = {
-            id: "",
+            userId: "",
             dateName: "",
             dateNumber: "",
             metThrough: "",
@@ -36,13 +36,13 @@ class Date extends Component {
         const { user } = this.props.auth;
         console.log(user)
         api.saveDate({
-            id: user.id,
+            userId: user.id,
             dateName: this.state.dateName,
             dateNumber: this.state.dateNumber,
             metThrough: this.state.metThrough,
             dateDescription: this.state.dateDescription,
             dateAddress: this.state.dateAddress
-        }).then(console.log("done!"))
+        }).then(console.log(api))
 
     }
 
