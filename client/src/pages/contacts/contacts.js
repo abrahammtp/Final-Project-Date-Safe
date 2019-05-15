@@ -4,15 +4,16 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import api from "../../utils/api";
 import { logoutUser } from "../../actions/authActions";
+import "./style.css";
 
 class Contact extends Component {
     constructor() {
         super();
         this.state = {
-            id: "",
+            userId: "",
             contactName: "",
             contactNumber: "",
-            contactRelationship: "",
+            relationship: "",
             errors: {}
         };
     };
@@ -34,13 +35,13 @@ class Contact extends Component {
         const { user } = this.props.auth;
         console.log(user)
         api.saveContact({
-            id: user.id,
+            userId: user.id,
             contactName: this.state.contactName,
             contactNumber: this.state.contactNumber,
-            contactRelationship: this.state.contactRelationship
-        }).then(console.log("done!"));
 
-        // console.log(userContact);
+            relationship: this.state.relationship
+        });     //.then(() => this.getContacts());
+        console.log("Done");
     }
 
     render() {
@@ -53,7 +54,7 @@ class Contact extends Component {
         });
 
         return (
-            <div>
+            <div className="contactContainer">
                 <div>
                     <form onSubmit={this.onSubmit}>
                         <label htmlFor="text">Name of your contact</label>
@@ -74,9 +75,8 @@ class Contact extends Component {
                         <input
                             onChange={this.onChange}
                             value={this.state.relationship}
-                            id="contactRelationship"
+                            id="relationship"
                             type="text"
-
                         />
                         <div className="form-button">
                             {/* <Link to="/dashboard"> */}
