@@ -8,6 +8,10 @@ const DatesSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User"
     },
+    userId: {
+        type: String,
+        required: false
+    },
     dateName: {
         type: String,
         required: false
@@ -21,6 +25,10 @@ const DatesSchema = new Schema({
         required: false
     },
     dateDescription: {
+        type: String,
+        required: false
+    },
+    dateAddress: {
         type: String,
         required: false
     }
