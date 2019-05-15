@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { logoutUser } from "../../actions/authActions";
 import "./style.css"
 import api from "../../utils/api"
+import { Link } from "react-router-dom";
+
 
 class Date extends Component {
     constructor() {
@@ -95,14 +97,14 @@ class Date extends Component {
                                 type="text"
                                 />
                             <div className="modal-footer">
+                            <Link to="/dashboard">
                                 <button
                                     type="submit"
                                     className="btn modal-close waves-effect waves-green btn-flat"
-                                    href="#!"
-                                    value={this.state.id}
                                     >
                                     Submit
                              </button>
+                                    </Link>
                             </div>
                         </form>
                                     </div>

@@ -31,6 +31,11 @@ const DatesSchema = new Schema({
     dateAddress: {
         type: String,
         required: false
+    },
+    dateTaken: {
+        type: Boolean,
+        required: false,
+        default: false,
     }
 });
 
