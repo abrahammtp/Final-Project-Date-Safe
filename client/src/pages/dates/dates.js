@@ -38,9 +38,11 @@ class Date extends Component {
         // this.setState({id:uid});
         const { user } = this.props.auth;
         console.log(user)
+        var uid = user.id
         // var userId = user.id 
         api.saveDate({
             dates: {
+                userId: user.id,
                 dateName: this.state.dateName,
                 dateNumber: this.state.dateNumber,
                 metThrough: this.state.metThrough,

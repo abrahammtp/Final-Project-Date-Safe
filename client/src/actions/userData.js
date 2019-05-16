@@ -5,6 +5,6 @@ export const userDates = dates => {
 axios
     .post("/api/users/dates:uid", dates)
     .then(res => {
-        const { userDate } = res.
+        const { userDate } = res.body
     })
 }

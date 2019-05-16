@@ -28,12 +28,12 @@ class Date extends Component {
     };
     onSubmit = e => {
         e.preventDefault();
-
         // console.log("User ID: ", uid);
-
+        
         //set state here of id to auth.id
-        // this.setState({id:uid});
         const { user } = this.props.auth;
+        var uid = user.id
+        this.setState({id:uid});
         console.log(user)
         api.saveDate({
             id: user.id,
