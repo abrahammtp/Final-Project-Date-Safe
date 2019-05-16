@@ -1,46 +1,46 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const DatesSchema = new Schema({
-  userId: {
-    type: Schema.Types.ObjectId,
-    ref: "User"
-  },
-  // creator: {
-  //     type: {
-  //         "$ref": String,
-  //         "$id": Schema.Types.ObjectId,
-  //         "$db": String,
-  //     },
-  //     required: false,
-  // },
-  dateName: {
-    type: String,
-    required: false
-  },
-  dateNumber: {
-    type: String,
-    required: false
-  },
-  metThrough: {
-    type: String,
-    required: false
-  },
-  dateDescription: {
-    type: String,
-    required: false
-  },
-  dateAddress: {
-    type: String,
-    required: false
-  },
-  dateTaken: {
-    type: Boolean,
-    required: false,
-    default: false,
-  },
+// const DatesSchema = new Schema({
+//   userId: {
+//     type: Schema.Types.ObjectId,
+//     ref: "User"
+//   },
+//   // creator: {
+//   //     type: {
+//   //         "$ref": String,
+//   //         "$id": Schema.Types.ObjectId,
+//   //         "$db": String,
+//   //     },
+//   //     required: false,
+//   // },
+//   dateName: {
+//     type: String,
+//     required: false
+//   },
+//   dateNumber: {
+//     type: String,
+//     required: false
+//   },
+//   metThrough: {
+//     type: String,
+//     required: false
+//   },
+//   dateDescription: {
+//     type: String,
+//     required: false
+//   },
+//   dateAddress: {
+//     type: String,
+//     required: false
+//   },
+//   dateTaken: {
+//     type: Boolean,
+//     required: false,
+//     default: false,
+//   },
 
-});
+// });
 
 
 // Create Schemas for a new user
@@ -75,7 +75,6 @@ const UserSchema = new Schema({
     default: Date.now
   },
   dates: {
-
     dateName: {
       type: String,
       required: false
@@ -101,7 +100,26 @@ const UserSchema = new Schema({
       required: true,
       default: false,
     },
-  }
+  },
+  contacts: {
+    contactName: {
+      type: String,
+      required: false
+    },
+    contactNumber: {
+      type: String,
+      required: false
+    },
+    relationship: {
+      type: String,
+      required: false
+    },
+    activeContact: {
+      type: Boolean,
+      required: true,
+      default: false
+    },
+  },
 });
 
 const User = mongoose.model("User", UserSchema);

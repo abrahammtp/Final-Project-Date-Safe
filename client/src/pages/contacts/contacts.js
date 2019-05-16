@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import api from "../../utils/api";
 import { logoutUser } from "../../actions/authActions";
@@ -35,11 +35,12 @@ class Contact extends Component {
         const { user } = this.props.auth;
         console.log(user)
         api.saveContact({
-            userId: user.id,
-            contactName: this.state.contactName,
-            contactNumber: this.state.contactNumber,
-
-            relationship: this.state.relationship
+            contacts: {
+                userId: user.id,
+                contactName: this.state.contactName,
+                contactNumber: this.state.contactNumber,
+                relationship: this.state.relationship
+            }
         });     //.then(() => this.getContacts());
         console.log("Done");
     }
@@ -79,9 +80,9 @@ class Contact extends Component {
                             type="text"
                         />
                         <div className="form-button2">
-                            <Link to="/dashboard">
-                                <button href="#!" type="submit" className="btn waves-effect waves-green btn" name="action">Submit</button>
-                            </Link>
+                            {/* <Link to="/dashboard"> */}
+                            <button href="#!" type="submit" className="btn waves-effect waves-green btn" name="action">Submit</button>
+                            {/* </Link> */}
                         </div>
                     </form>
                 </div>
