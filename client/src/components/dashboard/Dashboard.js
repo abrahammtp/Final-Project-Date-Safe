@@ -34,7 +34,7 @@ class Dashboard extends Component {
 
                 <Col>
                   <div className="userInfo1">
-                    <img className="picture" src={require("./../../images/IMG_20180315_222930_177.jpg")} height="275" width="275" alt="user"></img>
+                    <img className="picture" src={user.userPhoto} height="275" width="275" alt="user"></img>
                   </div>
                 </Col>
                 <Col>
