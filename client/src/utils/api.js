@@ -12,7 +12,7 @@ export default {
   },
   // Saves a date to the database
   saveDate: function(dateData) {
-    return axios.post("/api/dates", dateData);
+    return axios.post("/api/dates/", dateData);
   },
 
   // Contacts

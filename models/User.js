@@ -75,6 +75,10 @@ const UserSchema = new Schema({
     default: Date.now
   },
   dates: {
+    userId: {
+      type: String,
+      required: false
+    },
     dateName: {
       type: String,
       required: false
