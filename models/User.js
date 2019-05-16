@@ -99,6 +99,10 @@ const UserSchema = new Schema({
       type: String,
       required: false
     },
+    dateWhen: {
+      type: String,
+      required: false
+    },
     dateTaken: {
       type: Boolean,
       required: true,

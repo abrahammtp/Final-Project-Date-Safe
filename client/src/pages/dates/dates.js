@@ -18,6 +18,7 @@ class Date extends Component {
             metThrough: "",
             dateDescription: "",
             dateAddress: "",
+            dateWhen: "",
             errors: {}
         };
     }
@@ -38,7 +39,6 @@ class Date extends Component {
         // this.setState({id:uid});
         const { user } = this.props.auth;
         console.log(user)
-        var uid = user.id
         // var userId = user.id 
         api.saveDate({
             dates: {
@@ -48,6 +48,7 @@ class Date extends Component {
                 metThrough: this.state.metThrough,
                 dateDescription: this.state.dateDescription,
                 dateAddress: this.state.dateAddress,
+                dateWhen: this.state.dateWhen,
                 dateTaken: false
             }
         }).then(console.log("done!"))
@@ -100,6 +101,13 @@ class Date extends Component {
                             onChange={this.onChange}
                             value={this.state.dateAddress}
                             id="dateAddress"
+                            type="text"
+                        />
+                        <label htmlFor="text">When are you going on your date?</label>
+                        <input
+                            onChange={this.onChange}
+                            value={this.state.dateWhen}
+                            id="dateWhen"
                             type="text"
                         />
                         <div className="form-button1">
