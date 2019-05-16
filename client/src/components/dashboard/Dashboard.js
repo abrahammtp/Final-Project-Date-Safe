@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 class Dashboard extends Component {
   render() {
     const { user } = this.props.auth;
+    // const nameContact = user.contactName;
     return (
       <div>
         <Navbar />
@@ -25,8 +26,8 @@ class Dashboard extends Component {
                   {/* Modal Trigger */}
                 </Row>
                 <Link to="/dates">
-                <button className="btn waves-effect" type="submit" name="action">New Date</button>
-              </Link>
+                  <button className="btn waves-effect" type="submit" name="action">New Date</button>
+                </Link>
               </Container>
             </Col>
             <Col>
@@ -67,15 +68,12 @@ class Dashboard extends Component {
                   </Col>
                   <Col>
                     <h5>Previous dates</h5>
-                <p>Date's Name: {user.dateName}</p>
-                <p>Date's Phone Number: {user.dateNumber}</p>
-                <p>How you met: {user.metThrough}</p>
-                <p>Description of Date: {user.dateDescription}</p>
-                <p>Where you're going: {user.dateAddress}</p>
-                <p>When the date is: {user.dateWhen}</p>
-                <p>Emergency Contact: {user.contactName}</p>
-                <p>Contact Number: {user.contactNumber}</p>
-                <p>Relationship to contact: {user.relationship}</p>
+                    <p>Date's Name: {user.dateName}</p>
+                    <p>Date's Phone Number: {user.dateNumber}</p>
+                    <p>How you met: {user.metThrough}</p>
+                    <p>Description of Date: {user.dateDescription}</p>
+                    <p>Where you're going: {user.dateAddress}</p>
+                    <p>When the date is: {user.dateWhen}</p>
                   </Col>
                 </Col>
               </Container>
@@ -89,14 +87,9 @@ class Dashboard extends Component {
                   <Contacts />
 
                   <Container className="contactCard">
-                    <p className="contactOne">Rodrigo</p>
-                    <p>Phone Number: 907-495-3693</p>
-                    <p>Relationship: Brother</p>
-                  </Container>
-                  <Container className="contactCard">
-                    <p className="contactOne">Sandra</p>
-                    <p>Phone Number: 658-848-2659</p>
-                    <p>Relationship: Friend</p>
+                    <p>Emergency Contact: {user.contactName}</p>
+                    <p>Contact Number: {user.contactNumber}</p>
+                    <p>Relationship to contact: {user.relationship}</p>
                   </Container>
                 </Col>
 
