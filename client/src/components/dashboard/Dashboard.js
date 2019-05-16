@@ -8,8 +8,6 @@ import "./style.css"
 import Contacts from "./Contacts";
 import { Link } from "react-router-dom";
 
-
-
 class Dashboard extends Component {
   render() {
     const { user } = this.props.auth;
