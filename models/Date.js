@@ -4,13 +4,17 @@ const Schema = mongoose.Schema;
 // Create Schema for a new date
 
 const DatesSchema = new Schema({
-    _nameId: {
+    userId: {
         type: Schema.Types.ObjectId,
         ref: "User"
     },
-    userId: {
-        type: String,
-        required: false
+    creator: {
+        type: {
+            "$ref": String,
+            "$id": Schema.Types.ObjectId,
+            "$db": String,
+        },
+        required: false,
     },
     dateName: {
         type: String,

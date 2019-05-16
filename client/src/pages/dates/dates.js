@@ -5,14 +5,14 @@ import PropTypes from "prop-types";
 import { logoutUser } from "../../actions/authActions";
 import "./style.css"
 import api from "../../utils/api"
-import { Link } from "react-router-dom";
+// var ObjectId = require('mongodb').ObjectID;
+
 
 
 class Date extends Component {
     constructor() {
         super();
         this.state = {
-            userId: "",
             dateName: "",
             dateNumber: "",
             metThrough: "",
@@ -38,14 +38,17 @@ class Date extends Component {
         // this.setState({id:uid});
         const { user } = this.props.auth;
         console.log(user)
+        // var userId = user.id 
         api.saveDate({
-            userId: user.id,
-            dateName: this.state.dateName,
-            dateNumber: this.state.dateNumber,
-            metThrough: this.state.metThrough,
-            dateDescription: this.state.dateDescription,
-            dateAddress: this.state.dateAddress
-        }).then(console.log(api))
+            dates: {
+                dateName: this.state.dateName,
+                dateNumber: this.state.dateNumber,
+                metThrough: this.state.metThrough,
+                dateDescription: this.state.dateDescription,
+                dateAddress: this.state.dateAddress,
+                dateTaken: false
+            }
+        }).then(console.log("done!"))
 
     }
 
@@ -98,14 +101,14 @@ class Date extends Component {
                             type="text"
                         />
                         <div className="form-button1">
-                            <Link to="/dashboard">
-                                <button
-                                    type="submit"
-                                    className="btn waves-effect waves-green btn-flat"
-                                    href="#!"
-                                >Submit
+                            {/* <Link to="/dashboard"> */}
+                            <button
+                                type="submit"
+                                className="btn waves-effect waves-green btn-flat"
+                                href="#!"
+                            >Submit
                              </button>
-                            </Link>
+                            {/* </Link> */}
                         </div>
                     </form>
                 </div>

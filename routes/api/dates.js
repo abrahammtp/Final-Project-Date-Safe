@@ -4,7 +4,7 @@ const datesController = require("../../controllers/datesController");
 
 router.route("/")
 .get(datesController.find)
-.post(datesController.create);
+.post(datesController.update);
 
 
 router.post("/:id", datesController.update);
