@@ -67,12 +67,15 @@ class Dashboard extends Component {
                   </Col>
                   <Col>
                     <h5>Previous dates</h5>
-                    <p className="dateOne1">Date on 04/18/2019</p>
-                    <p className="date1">Went to TopGolf with Jennifer and then went to The Cloak and Blaster</p>
-                    <p className="dateOne1">Date on 03/01/2019</p>
-                    <p className="date1">Went to The Orlando Improv with Fernanda</p>
-                    <p className="dateOne1">Date on 01/15/2019</p>
-                    <p className="date1">Went to Domu with Jennifer and then went to Lake Cherokee Park</p>
+                <p>Date's Name: {user.dateName}</p>
+                <p>Date's Phone Number: {user.dateNumber}</p>
+                <p>How you met: {user.metThrough}</p>
+                <p>Description of Date: {user.dateDescription}</p>
+                <p>Where you're going: {user.dateAddress}</p>
+                <p>When the date is: {user.dateWhen}</p>
+                <p>Emergency Contact: {user.contactName}</p>
+                <p>Contact Number: {user.contactNumber}</p>
+                <p>Relationship to contact: {user.relationship}</p>
                   </Col>
                 </Col>
               </Container>

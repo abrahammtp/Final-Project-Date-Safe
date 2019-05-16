@@ -74,7 +74,17 @@ router.post("/login", (req, res) => {
           id: user.id,
           name: user.name,
           number: user.number,
+          gender: user.gender,
           address: user.address,
+          dateName: user.dates.dateName,
+          dateNumber: user.dates.dateNumber,
+          metThrough: user.dates.metThrough,
+          dateDescription: user.dates.dateDescription,
+          dateAddress: user.dates.dateAddress,
+          dateWhen: user.dates.dateWhen,
+          contactName: user.contacts.contactName,
+          contactNumber: user.contacts.contactNumber,
+          relationship: user.contacts.relationship
         };
         // Sign token
         jwt.sign(
