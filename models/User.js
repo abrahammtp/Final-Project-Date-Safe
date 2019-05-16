@@ -74,6 +74,10 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  userPhoto: {
+    type: String,
+    required: true
+  },
   dates: {
     userId: {
       type: String,
