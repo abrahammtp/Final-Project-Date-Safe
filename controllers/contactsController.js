@@ -1,4 +1,7 @@
 var db = require("../models");
+var mongoose = require('mongoose');
+
+mongoose.set('useFindAndModify', false);
 
 // Defining methods for ContactControllers
 module.exports = {
@@ -10,14 +13,15 @@ module.exports = {
     },
     // Create a new contact
     create: function(req, res) {
-        db.Contact.create(req.body).then(function(dbContact) {
-            res.json(dbContact);
-        });
+        db.Contact.create(req.body)
+            .then(dbContacts => res.json(dbContacts))
+            .catch(err => res.status(422).json(err))
     },
     update: function (req, res) {
-        db.Contact.findOneAndUpdate({ _id: req.params.id }, req, body)
-            .then(dbContact => res.json(dbContact))
+        db.User.update({ _id: "5cd0489e470eb915e0ab839b" }, req.body)
+            .then(dbUsers => res.json(dbUsers))
             .catch(err => res.status(422).json(err));
+            console.log(req.body);
     },
     remove: function(req, res) {
         db.Contact.remove({ _id: req.params.id }).then(function(dbContact) {
