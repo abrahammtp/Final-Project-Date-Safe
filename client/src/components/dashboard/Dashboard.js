@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 class Dashboard extends Component {
   render() {
     const { user } = this.props.auth;
+    const photo = user.userPhoto
     return (
       <div>
         <Navbar />
@@ -34,7 +35,7 @@ class Dashboard extends Component {
 
                 <Col>
                   <div className="userInfo1">
-                    <img className="picture" src={user.userPhoto} height="275" width="275" alt="user"></img>
+                    <img className="picture" src={(photo)}  height="275" width="275" alt="user"></img>
                   </div>
                 </Col>
                 <Col>
