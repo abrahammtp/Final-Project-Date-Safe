@@ -7,8 +7,9 @@ mongoose.set('useFindAndModify', false);
 module.exports = {
 
     find: function (req, res) {
-        db.Date.find({ _nameId: req.params.id }).then(function (dbDates) {
-            res.json(dbDates);
+        db.User.find({ _id: "5cd0489e470eb915e0ab839b" }).then(function (dbUsers) {
+            res.json(dbUsers[0].dates);
+            console.log(dbUsers[0].dates)
         });
     },
     create: function (req, res) {
