@@ -7,7 +7,7 @@ import { Row, Container, Col } from 'react-grid-system';
 import "./style.css"
 import Contacts from "./Contacts";
 import { Link } from "react-router-dom";
-import API from "../../utils/api";
+import api from "../../utils/api";
 
 class Dashboard extends Component {
   state = {
@@ -19,7 +19,7 @@ class Dashboard extends Component {
   }
 
   getContacts  = () => {
-    API.getSavedContacts(this.state.q)
+    api.getSavedContacts(this.state.q)
       .then(res => 
         this.setState({
           contacts: res.data
@@ -33,6 +33,25 @@ class Dashboard extends Component {
         );
   };
 
+  state = {
+    dates: [],
+    dateName: "",
+    message: "test"
+  };
+  getSavedDates = () => {
+    api.getSavedDates(this.state.q)
+    .then(res =>
+      this.setState({
+        dates: res.data
+      })
+    );
+} 
+
+handleFormSubmit = event => {
+  event.preventDefault();
+  this.getSavedDates();
+};
+  
   render() {
     const { user } = this.props.auth;
 
@@ -53,6 +72,7 @@ class Dashboard extends Component {
                 <Link to="/dates">
                   <button className="btn waves-effect" type="submit" name="action">New Date</button>
                 </Link>
+                  <button className="btn waves-effect" type="submit" name="action" onClick={() => this.getSavedDates()}>Refresh Dates</button>
               </Container>
             </Col>
             <Col>
@@ -87,18 +107,18 @@ class Dashboard extends Component {
               <Container className="userContainer">
                 <Col>
                   <Col>
-                    <h5 className="dateOne">Upcoming dates</h5>
-                    <p className="dateOne1">Date on 05/22/2019</p>
-                    <p className="date1">Going to Barcade with Kelly</p>
+                    <h5 className="dateOne">Upcoming date</h5>
+                    <p className="dateOne1">Date on {user.dateWhen}</p>
+                    <p className="date1">Going to {user.dateAddress} with {user.dateName}</p>
                   </Col>
                   <Col>
-                    <h5>Previous dates</h5>
+                    {/* <h5>Previous dates</h5>
                     <p>Date's Name: {user.dateName}</p>
                     <p>Date's Phone Number: {user.dateNumber}</p>
                     <p>How you met: {user.metThrough}</p>
                     <p>Description of Date: {user.dateDescription}</p>
                     <p>Where you're going: {user.dateAddress}</p>
-                    <p>When the date is: {user.dateWhen}</p>
+                    <p>When the date is: {user.dateWhen}</p> */}
                   </Col>
                 </Col>
               </Container>
