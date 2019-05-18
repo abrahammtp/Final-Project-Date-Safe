@@ -42,6 +42,18 @@ class Contact extends Component {
                 relationship: this.state.relationship
             }
         });     //.then(() => this.getContacts());
+        api.getSavedContacts(this.state.q)
+            .then(res =>
+                this.setState({
+                    contacts: res.data
+                })
+            )
+            .catch(() =>
+                this.setState({
+                    contacts: [],
+                    message: "No contacts have been saved"
+                })
+            );
         console.log("Done");
     }
 

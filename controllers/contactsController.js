@@ -7,8 +7,9 @@ mongoose.set('useFindAndModify', false);
 module.exports = {
     // Find a contact
     find: function(req, res) {
-        db.Contact.find({ _nameId: req.params.id }).then(function(dbContact) {
-            res.json(dbContact);
+        db.User.find({ _id: "5cddd47380ead93d9" }).then(function(dbUsers) {
+            res.json(dbUsers[i].contacts);
+            console.log(dbUsers[i].contacts)
         });
     },
     // Create a new contact
