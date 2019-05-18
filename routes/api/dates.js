@@ -7,7 +7,6 @@ router.route("/")
 
 router.route("/:id").get(datesController.find)
 
-
 router.post("/:id", datesController.update);
 router.delete("/:id", datesController.remove);
 

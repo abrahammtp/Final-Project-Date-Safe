@@ -16,32 +16,31 @@ class Dashboard extends Component {
     relationship: "",
   }
 
-  getContacts  = () => {
-    api.getSavedContacts(this.state.q)
-      .then(res => 
-        this.setState({
-          contacts: res.data
-        })
-        )
-        .catch(() => 
-          this.setState({
-            contacts: [],
-            message: "No contacts have been saved"
-          })
-        );
+  getSavedContacts = () => {
+    const { user } = this.props.auth;
+    api.getSavedContacts(user.id).then(res =>
+
+      this.setState({
+        contactName: res.data[0].contacts.contactName,
+        contactNumber: res.data[0].contacts.contactNumber,
+        relationship: res.data[0].contacts.relationship
+      })
+    )
   };
 
   getSavedDates = () => {
     const { user } = this.props.auth;
     api.getSavedDates(user.id)
-  }
+  };
 
   handleFormSubmit = event => {
     event.preventDefault();
     this.getSavedDates();
+    this.getSavedContacts();
   };
 
   render() {
+    this.getSavedContacts();
     const { user } = this.props.auth;
 
     const photo = user.userPhoto
