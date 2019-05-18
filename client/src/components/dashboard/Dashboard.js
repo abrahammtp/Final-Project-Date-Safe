@@ -11,6 +11,9 @@ import api from "../../utils/api";
 
 class Dashboard extends Component {
   state = {
+    dateName: "",
+    dateWhen: "",
+    dateAddress: "",
     contactName: "",
     contactNumber: "",
     relationship: "",
@@ -30,8 +33,17 @@ class Dashboard extends Component {
 
   getSavedDates = () => {
     const { user } = this.props.auth;
-    api.getSavedDates(user.id)
-  };
+
+    api.getSavedDates(user.id).then(res => 
+
+      this.setState({
+        dateName: res.data[0].dates.dateName,
+        dateWhen: res.data[0].dates.dateWhen,
+        dateAddress: res.data[0].dates.dateAddress,
+      })
+      )
+  }
+
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -41,6 +53,7 @@ class Dashboard extends Component {
 
   render() {
     this.getSavedContacts();
+    this.getSavedDates()
     const { user } = this.props.auth;
 
     const photo = user.userPhoto
@@ -60,7 +73,7 @@ class Dashboard extends Component {
                 <Link to="/dates">
                   <button className="btn waves-effect" type="submit" name="action">New Date</button>
                 </Link>
-                <button className="btn waves-effect" type="submit" value={user.id} name="action" onClick={() => this.getSavedDates()}>Refresh Dates</button>
+                {/* <button className="btn waves-effect" type="submit" value={user.id} name="action" onClick={() => this.getSavedDates()}>Refresh Dates</button> */}
               </Container>
             </Col>
             <Col>
@@ -96,8 +109,8 @@ class Dashboard extends Component {
                 <Col>
                   <Col>
                     <h5 className="dateOne">Upcoming date</h5>
-                    <p className="dateOne1">Date on {user.dateWhen}</p>
-                    <p className="date1">Going to {user.dateAddress} with {user.dateName}</p>
+                    <p className="dateOne1">Date on {this.state.dateWhen}</p>
+                    <p className="date1">Going to {this.state.dateAddress} with {this.state.dateName}</p>
                   </Col>
                   <Col>
                     {/* <h5>Previous dates</h5>
