@@ -111,13 +111,14 @@ class Date extends Component {
                             type="text"
                         />
                         <div className="form-button1">
-                            <Link to="/dashboard">
                             <button
                                 type="submit"
                                 className="btn waves-effect waves-green btn-flat"
                                 href="#!"
                             >Submit
                              </button>
+                            <Link to="/dashboard">
+                            <button className="btn waves-effect waves-green btn-flat">Dashboard</button>
                             </Link>
                         </div>
                     </form>
