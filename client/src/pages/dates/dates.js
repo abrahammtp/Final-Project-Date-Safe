@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { logoutUser } from "../../actions/authActions";
 import "./style.css"
@@ -111,14 +111,14 @@ class Date extends Component {
                             type="text"
                         />
                         <div className="form-button1">
-                            {/* <Link to="/dashboard"> */}
+                            <Link to="/dashboard">
                             <button
                                 type="submit"
                                 className="btn waves-effect waves-green btn-flat"
                                 href="#!"
                             >Submit
                              </button>
-                            {/* </Link> */}
+                            </Link>
                         </div>
                     </form>
                 </div>

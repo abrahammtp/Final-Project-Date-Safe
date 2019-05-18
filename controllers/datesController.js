@@ -3,13 +3,14 @@ var mongoose = require('mongoose');
 
 mongoose.set('useFindAndModify', false);
 
+
 // Defining methods for datesControllers
 module.exports = {
 
     find: function (req, res) {
-        db.User.find({ _id: "5cd0489e470eb915e0ab839b" }).then(function (dbUsers) {
-            res.json(dbUsers[0].dates);
-            console.log(dbUsers[0].dates)
+        db.User.find({ _id: req.params.id }).then(function (dbUsers) {
+            res.json(dbUsers);
+            console.log(dbUsers)
         });
     },
     create: function (req, res) {

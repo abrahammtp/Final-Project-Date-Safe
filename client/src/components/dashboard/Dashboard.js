@@ -14,8 +14,6 @@ class Dashboard extends Component {
     contactName: "",
     contactNumber: "",
     relationship: "",
-    q: "",
-    message: "No contancts have been saved"
   }
 
   getContacts  = () => {
@@ -33,25 +31,16 @@ class Dashboard extends Component {
         );
   };
 
-  state = {
-    dates: [],
-    dateName: "",
-    message: "test"
-  };
   getSavedDates = () => {
-    api.getSavedDates(this.state.q)
-    .then(res =>
-      this.setState({
-        dates: res.data
-      })
-    );
-} 
+    const { user } = this.props.auth;
+    api.getSavedDates(user.id)
+  }
 
-handleFormSubmit = event => {
-  event.preventDefault();
-  this.getSavedDates();
-};
-  
+  handleFormSubmit = event => {
+    event.preventDefault();
+    this.getSavedDates();
+  };
+
   render() {
     const { user } = this.props.auth;
 
@@ -72,7 +61,7 @@ handleFormSubmit = event => {
                 <Link to="/dates">
                   <button className="btn waves-effect" type="submit" name="action">New Date</button>
                 </Link>
-                  <button className="btn waves-effect" type="submit" name="action" onClick={() => this.getSavedDates()}>Refresh Dates</button>
+                <button className="btn waves-effect" type="submit" value={user.id} name="action" onClick={() => this.getSavedDates()}>Refresh Dates</button>
               </Container>
             </Col>
             <Col>
@@ -80,7 +69,7 @@ handleFormSubmit = event => {
 
                 <Col>
                   <div className="userInfo1">
-                    <img className="picture" src={(photo)}  height="275" width="275" alt="user"></img>
+                    <img className="picture" src={(photo)} height="275" width="275" alt="user"></img>
                   </div>
                 </Col>
                 <Col>

@@ -3,8 +3,8 @@ import axios from "axios";
 export default {
   // Dates
   // Gets all saved dates
-  getSavedDates: function() {
-    return axios.get("/api/dates");
+  getSavedDates: function(id) {
+    return axios.get("/api/dates/" + id);
   },
   // Deletes the saved date with the given id
   deleteDates: function(id) {
