@@ -17,8 +17,8 @@ export default {
 
   // Contacts
   // Gets all saved contacts
-  getSavedContacts: function() {
-    return axios.get("/api/contacts");
+  getSavedContacts: function(id) {
+    return axios.get("/api/contacts/" + id);
   },
   // Deletes the saved contact with the given ud
   deleteContacts: function(id) {

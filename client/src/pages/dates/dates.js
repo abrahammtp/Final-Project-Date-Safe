@@ -32,14 +32,8 @@ class Date extends Component {
     };
     onSubmit = e => {
         e.preventDefault();
-
-        // console.log("User ID: ", uid);
-
-        //set state here of id to auth.id
-        // this.setState({id:uid});
         const { user } = this.props.auth;
         console.log(user)
-        // var userId = user.id 
         api.saveDate({
             dates: {
                 userId: user.id,
@@ -51,18 +45,13 @@ class Date extends Component {
                 dateWhen: this.state.dateWhen,
                 dateTaken: false
             }
-        }).then(console.log("done!"))
-
+        }).then(console.log("done!"));
     }
-
-
 
     render() {
         // eslint-disable-next-line
         const { user } = this.props.auth;
-        // var elems = document.querySelectorAll('.modal');
-        // // eslint-disable-next-line
-        // var instances = window.M.Modal.init(elems);
+
         return (
             <div className="container">
                 <div className="content">

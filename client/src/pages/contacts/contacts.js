@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import api from "../../utils/api";
 import { logoutUser } from "../../actions/authActions";
@@ -41,30 +41,12 @@ class Contact extends Component {
                 contactNumber: this.state.contactNumber,
                 relationship: this.state.relationship
             }
-        });     //.then(() => this.getContacts());
-        api.getSavedContacts(this.state.q)
-            .then(res =>
-                this.setState({
-                    contacts: res.data
-                })
-            )
-            .catch(() =>
-                this.setState({
-                    contacts: [],
-                    message: "No contacts have been saved"
-                })
-            );
-        console.log("Done");
+        }).then(console.log("Done"));
     }
 
     render() {
         // eslint-disable-next-line
         const { user } = this.props.auth;
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.modal');
-            // eslint-disable-next-line
-            var instances = window.M.Modal.init(elems);
-        });
 
         return (
             <div className="contactContainer">
@@ -95,6 +77,9 @@ class Contact extends Component {
                             {/* <Link to="/dashboard"> */}
                             <button href="#!" type="submit" className="btn waves-effect waves-green btn" name="action">Submit</button>
                             {/* </Link> */}
+                            <Link to="/dashboard">
+                            <button href="#!" type="submit" className="btn waves-effect waves-green btn" name="action">Dashboard</button>
+                            </Link>
                         </div>
                     </form>
                 </div>
