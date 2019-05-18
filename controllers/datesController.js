@@ -10,7 +10,7 @@ module.exports = {
     find: function (req, res) {
         db.User.find({ _id: req.params.id }).then(function (dbUsers) {
             res.json(dbUsers);
-            console.log(dbUsers)
+            // console.log(dbUsers)
         });
     },
     create: function (req, res) {
@@ -22,7 +22,7 @@ module.exports = {
         db.User.findOneAndUpdate({ _id: req.body.dates.userId }, req.body)
         .then(dbUsers => res.json(dbUsers))
         .catch(err => res.status(422).json(err));
-        console.log(req.body)
+        // console.log(req.body)
     },
     remove: function (req, res) {
         db.Date.findById(req.params.id)
