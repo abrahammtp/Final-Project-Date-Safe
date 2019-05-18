@@ -7,10 +7,32 @@ import { Row, Container, Col } from 'react-grid-system';
 import "./style.css"
 import Contacts from "./Contacts";
 import { Link } from "react-router-dom";
-import api from "../../utils/api"
-
+import api from "../../utils/api";
 
 class Dashboard extends Component {
+  state = {
+    contactName: "",
+    contactNumber: "",
+    relationship: "",
+    q: "",
+    message: "No contancts have been saved"
+  }
+
+  getContacts  = () => {
+    api.getSavedContacts(this.state.q)
+      .then(res => 
+        this.setState({
+          contacts: res.data
+        })
+        )
+        .catch(() => 
+          this.setState({
+            contacts: [],
+            message: "No contacts have been saved"
+          })
+        );
+  };
+
   state = {
     dates: [],
     dateName: "",
@@ -110,9 +132,9 @@ handleFormSubmit = event => {
                   <Contacts />
 
                   <Container className="contactCard">
-                    <p>Emergency Contact: {user.contactName}</p>
-                    <p>Contact Number: {user.contactNumber}</p>
-                    <p>Relationship to contact: {user.relationship}</p>
+                    <p>Emergency Contact: {this.state.contactName}</p>
+                    <p>Contact Number: {this.state.contactNumber}</p>
+                    <p>Relationship to contact: {this.state.relationship}</p>
                   </Container>
                 </Col>
 
