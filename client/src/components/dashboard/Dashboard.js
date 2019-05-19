@@ -86,12 +86,8 @@ class Dashboard extends Component {
                 </Col>
                 <Col>
                   <div className="userInfo">
-
-                    <p>Welcome to Date Safe</p>
-
                     <p>Hello, {user.name.split(" ")[0]}!</p>
-                    {/* <p>Hello, {user.id}!</p> */}
-
+                    <p>Welcome to Date Safe</p>
                     <p>Address: {user.address}</p>
                     <p>Phone Number: {user.number}</p>
                   </div>
@@ -129,12 +125,12 @@ class Dashboard extends Component {
               <Container className="userContainer">
                 <Col>
 
-                  <h5 className="dateOne">Contacts</h5>
+                  <h5 className="dateOne">Emergency Contact</h5>
                   <Contacts />
 
                   <Container className="contactCard">
-                    <p>Emergency Contact: {this.state.contactName}</p>
-                    <p>Contact Number: {this.state.contactNumber}</p>
+                    <p>Name: {this.state.contactName}</p>
+                    <p>Phone Number: {this.state.contactNumber}</p>
                     <p>Relationship to contact: {this.state.relationship}</p>
                   </Container>
                 </Col>

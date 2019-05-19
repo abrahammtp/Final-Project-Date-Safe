@@ -2,18 +2,21 @@
   margin-top: 0;
   padding: 0;
   font-family: sans-serif;
-  background: url(../../images/Wallpaper.png) no-repeat center center fixed;
+  background: url(../../images/colorblock-couple-color-enhance-magic.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding-bottom: 180px;
+  /* padding-bottom: 180px; */
+  height: 100vh
 }
 
 .info-container {
   max-width: 400px;
-  margin-left: 60px;
-
+  margin-left: 20px;
+  text-align: center;
+  padding: 0px;
+  margin-top: -20px;
 }
 
 .splash {
@@ -21,12 +24,13 @@
   font-weight: bold;
   text-shadow: 1px 1px 2px whitesmoke;}
 .para {
-  font-size: 18px
+  font-size: 16px
 }
+
 .btn {
   background: rgb(41, 39, 39, 0.6)
 }
+
 .btn:hover {
   background: rgb(41, 39, 39)
-
 }
