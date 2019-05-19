@@ -1,13 +1,23 @@
 .container1 {
-    background-color: rgb(250, 248, 248);
+    background-color: rgba(255, 255, 255, 0.966);;
     padding-bottom: 50px;
     padding-top: 50px;
     max-width: 700px;
     margin-left: 400px;
-    margin-bottom: 50px;
+    margin-bottom: 55px;
     margin-top: 50px;
 }
 
 form {
     max-height: 700px;
+}
+
+.full-page {
+    background: url("https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2015/04/colortheory.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: 100%;
+    /* padding-bottom: 100px */
 }

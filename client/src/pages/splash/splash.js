@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../../components/layout/Navbar/Navbar"
+import Navbar from "../../components/layout/Navbar/Navbar";
+import Footer from "../../components/layout/Footer/footer"
 import "./splash.css";
 
 class Splash extends Component {
@@ -19,6 +20,7 @@ class Splash extends Component {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     )
   }
