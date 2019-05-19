@@ -53,44 +53,10 @@ class Contact extends Component {
 
         return (
             <div>
-                {/* Modal Trigger */}
                 <div>
                     <Link to="/contacts">
-                        <button className="waves-effect waves-light btn newContactButton" href="#modal2">New contact</button>
+                        <button className="waves-effect waves-light btn newContactButton light-blue" href="#modal2">New contact</button>
                     </Link>
-
-                    {/* <div id="modal2" className="modal">
-                        <div className="modal-content">
-                            <h4>Add a new contact</h4>
-                            <form onSubmit={this.onSubmit}>
-                                <label htmlFor="text">Name of your contact</label>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.contactName}
-                                    id="contactName"
-                                    type="text"
-                                />
-                                <label htmlFor="text">Contact's phone number</label>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.contactNumber}
-                                    id="contactNumber"
-                                    type="text"
-                                />
-                                <label htmlFor="text">Relationship with the contact</label>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.relationship}
-                                    id="contactRelationship"
-                                    type="text"
-
-                                />
-                                <div className="modal-footer">
-                                    <button href="#!" type="submit" className="modal-close waves-effect waves-green btn">Submit</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div> */}
                 </div>
             </div >
         )

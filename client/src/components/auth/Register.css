@@ -1,5 +1,5 @@
 .container1 {
-    background-color: rgba(255, 255, 255, 0.966);;
+    background-color: rgba(255, 255, 255, 0.8);;
     padding-bottom: 50px;
     padding-top: 50px;
     max-width: 700px;
@@ -13,7 +13,7 @@ form {
 }
 
 .full-page {
-    background: url("https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2015/04/colortheory.jpg");
+    background: url(../../images/register-login-background.jpg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
