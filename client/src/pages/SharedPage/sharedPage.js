@@ -43,25 +43,21 @@ export class Shared extends Component {
       <div>
         <Navbar />
         <Row>
+<Col>
           <Container className="userContainer">
 
-            <Col>
               <div className="userInfo1">
                 <img className="picture" src={(photo)} height="275" width="275" alt="user"></img>
               </div>
-            </Col>
-            <Col>
               <div className="userInfo">
                 <p>Hello, {user.name.split(" ")[0]}!</p>
                 <p>Welcome to Date Safe</p>
                 <p>Address: {user.address}</p>
                 <p>Phone Number: {user.number}</p>
               </div>
-            </Col>
           </Container>
-          <Row>
-            <Col>
-
+</Col>
+<Col>
               <Container>
                 <div className="date">
                   <h3>Date Info</h3>
@@ -70,11 +66,8 @@ export class Shared extends Component {
                   <h6>Date Notes: {this.state.dateDescription}</h6>
                 </div>
               </Container>
-            </Col>
-          </Row>
-          <Row>
-
-            <Col>
+</Col>
+        </Row>
               <Container>
                 <div className="map">
                   <h3>Current Location</h3>
@@ -82,9 +75,6 @@ export class Shared extends Component {
                   <Map />
                 </div>
               </Container>
-            </Col>
-          </Row>
-        </Row>
       </div>
     );
   }
