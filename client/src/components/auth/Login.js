@@ -6,6 +6,7 @@ import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
 import Navbar2 from "../../components/layout/Navbar2/Navbar2"
 import "./Login.css";
+import Footer from "../../components/layout/Footer/footer"
 
 class Login extends Component {
   constructor() {
@@ -16,8 +17,6 @@ class Login extends Component {
       errors: {}
     };
   }
-
-
 
   componentDidMount() {
     // If logged in and user navigates to Login page, should redirect them to dashboard
@@ -55,7 +54,7 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div>
+      <div className="full-page">
         <Navbar2 />
         <div className="container">
           <div style={{ marginTop: "4rem" }} className="row">
@@ -124,6 +123,7 @@ class Login extends Component {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

@@ -5,7 +5,8 @@ import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
 import "./Register.css";
-import Navbar from "../../components/layout/Navbar/Navbar"
+import Navbar from "../../components/layout/Navbar/Navbar";
+import Footer from "../../components/layout/Footer/footer"
 
 class Register extends Component {
   constructor() {
@@ -64,7 +65,7 @@ class Register extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div>
+      <div className="full-page">
         <Navbar />
         <div className="container1">
           <div className="row">
@@ -211,6 +212,7 @@ class Register extends Component {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

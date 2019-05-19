@@ -9,7 +9,7 @@ import "./App.css";
 import Splash from "./pages/splash/splash"
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
-import Footer from "./components/layout/Footer/footer";
+// import Footer from "./components/layout/Footer/footer";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Dates from "./pages/dates/dates"
@@ -52,7 +52,7 @@ function App() {
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/dates" component={Dates} />
           </Switch>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </Router>
     </Provider>
