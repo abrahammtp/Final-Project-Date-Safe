@@ -14,7 +14,7 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Dates from "./pages/dates/dates"
 import Contacts from "./pages/contacts/contacts";
-
+import Shared from "./pages/SharedPage/sharedPage"
 // import userPage from "./pages/userPage";
 
 // Check for token to keep user logged in
@@ -44,7 +44,7 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/" component={Splash} />
-          {/* <Route exact path="/shared" component={Shared} /> */}
+          <Route exact path="/shared" component={Shared} />
           <Switch>
             <PrivateRoute exact path="/contacts" component={Contacts} />
           </Switch>

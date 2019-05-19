@@ -67,13 +67,11 @@ class Dashboard extends Component {
 
                 <Row>
                   <h4 className="newDateHeader">Going on a date?</h4>
-                  {/* <Col debug> */}
-                  {/* Modal Trigger */}
+
                 </Row>
                 <Link to="/dates">
                   <button className="btn waves-effect" type="submit" name="action">New Date</button>
                 </Link>
-                {/* <button className="btn waves-effect" type="submit" value={user.id} name="action" onClick={() => this.getSavedDates()}>Refresh Dates</button> */}
               </Container>
             </Col>
             <Col>
