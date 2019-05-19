@@ -67,13 +67,11 @@ class Dashboard extends Component {
 
                 <Row>
                   <h4 className="newDateHeader">Going on a date?</h4>
-                  {/* <Col debug> */}
-                  {/* Modal Trigger */}
+
                 </Row>
                 <Link to="/dates">
                   <button className="btn waves-effect" type="submit" name="action">New Date</button>
                 </Link>
-                {/* <button className="btn waves-effect" type="submit" value={user.id} name="action" onClick={() => this.getSavedDates()}>Refresh Dates</button> */}
               </Container>
             </Col>
             <Col>
@@ -86,12 +84,8 @@ class Dashboard extends Component {
                 </Col>
                 <Col>
                   <div className="userInfo">
-
                     <p>Welcome to Date Safe</p>
-
                     <p>Hello, {user.name.split(" ")[0]}!</p>
-                    {/* <p>Hello, {user.id}!</p> */}
-
                     <p>Address: {user.address}</p>
                     <p>Phone Number: {user.number}</p>
                   </div>
