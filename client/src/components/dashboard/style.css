@@ -3,42 +3,53 @@
 	height: 100%;
 	border-radius: 5px;
 	box-shadow: 5px 10px 18px rgb(77, 75, 75);
-	width: 80%
+	width: 80%;
+	align-content: center;
+	padding-bottom: 10px
 }
 
 .topRow {
 	margin-top: 30px;
 }
+
 .bottomRow {
 	margin-top: 30px;
 	margin-bottom: 80px;
 }
+
 .newDateHeader {
-	margin-left: 17%;
+	margin-left: 18%;
 }
+
 .newDateButton {
 	margin-top: 7%;
 	margin-left: 37%;
 	margin-bottom: 7%;
 }
+
+.contactButton {
+	margin-left: 32%
+}
+
 .btn {
 	max-width: 100%;
 }
-.date1 {
-	color: grey;
-	font-size: 10px;
-}
+
 .dateOne {
-	padding-top: 20px;
+	padding-top: 25px;
+	margin-left: 15%
 }
 
 .contactCard {
 	background: lightgrey;
     border-radius: 8px;
 }
+
 .contactOne {
-	padding-top: 10px;
+	padding-top: 20px;
+	margin-left: 20%
 }
+
 .picture {
 	margin-right: 37px;
 	margin-top: 20px;
@@ -50,4 +61,17 @@
 
 .userInfo1{
 float: left;
+}
+
+.dashboard {
+	background: url(../../images/register-login-background.jpg);
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: 100%;
+}
+
+.date-Button {
+	margin-left: 35%
 }

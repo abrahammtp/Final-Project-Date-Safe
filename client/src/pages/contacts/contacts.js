@@ -51,6 +51,8 @@ class Contact extends Component {
         return (
             <div className="contactContainer">
                 <div>
+                    <h4>Create a new emergency contact</h4>
+                    <br></br>
                     <form onSubmit={this.onSubmit}>
                         <label htmlFor="text">Name of your contact</label>
                         <input

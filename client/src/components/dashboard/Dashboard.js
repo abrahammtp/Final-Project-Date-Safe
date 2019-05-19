@@ -34,14 +34,14 @@ class Dashboard extends Component {
   getSavedDates = () => {
     const { user } = this.props.auth;
 
-    api.getSavedDates(user.id).then(res => 
+    api.getSavedDates(user.id).then(res =>
 
       this.setState({
         dateName: res.data[0].dates.dateName,
         dateWhen: res.data[0].dates.dateWhen,
         dateAddress: res.data[0].dates.dateAddress,
       })
-      )
+    )
   }
 
 
@@ -58,7 +58,7 @@ class Dashboard extends Component {
 
     const photo = user.userPhoto
     return (
-      <div>
+      <div className="dashboard">
         <Navbar />
         <Container>
           <Row className="topRow">
@@ -69,8 +69,9 @@ class Dashboard extends Component {
                   <h4 className="newDateHeader">Going on a date?</h4>
 
                 </Row>
+                <br></br>
                 <Link to="/dates">
-                  <button className="btn waves-effect" type="submit" name="action">New Date</button>
+                  <button className="btn waves-effect date-Button light-blue" type="submit" name="action">New Date</button>
                 </Link>
               </Container>
             </Col>
@@ -84,7 +85,7 @@ class Dashboard extends Component {
                 </Col>
                 <Col>
                   <div className="userInfo">
-                    <p>Hello, {user.name.split(" ")[0]}!</p>
+                    <p>Hello, <b>{user.name.split(" ")[0]}!</b></p>
                     <p>Welcome to Date Safe</p>
                     <p>Address: {user.address}</p>
                     <p>Phone Number: {user.number}</p>
@@ -102,18 +103,10 @@ class Dashboard extends Component {
               <Container className="userContainer">
                 <Col>
                   <Col>
-                    <h5 className="dateOne">Upcoming date</h5>
-                    <p className="dateOne1">Date on {this.state.dateWhen}</p>
-                    <p className="date1">Going to {this.state.dateAddress} with {this.state.dateName}</p>
-                  </Col>
-                  <Col>
-                    {/* <h5>Previous dates</h5>
-                    <p>Date's Name: {user.dateName}</p>
-                    <p>Date's Phone Number: {user.dateNumber}</p>
-                    <p>How you met: {user.metThrough}</p>
-                    <p>Description of Date: {user.dateDescription}</p>
-                    <p>Where you're going: {user.dateAddress}</p>
-                    <p>When the date is: {user.dateWhen}</p> */}
+                    <h4 className="dateOne">Upcoming date</h4>
+                    <br></br>
+                    <h5>Date on {this.state.dateWhen}</h5>
+                    <h6 className="date1">Going to {this.state.dateAddress} with {this.state.dateName}</h6>
                   </Col>
                 </Col>
               </Container>
@@ -123,8 +116,10 @@ class Dashboard extends Component {
               <Container className="userContainer">
                 <Col>
 
-                  <h5 className="dateOne">Emergency Contact</h5>
-                  <Contacts />
+                  <h5 className="contactOne">Emergency Contact</h5>
+                  <div className="contactButton">
+                    <Contacts />
+                  </div>
 
                   <Container className="contactCard">
                     <p>Name: {this.state.contactName}</p>

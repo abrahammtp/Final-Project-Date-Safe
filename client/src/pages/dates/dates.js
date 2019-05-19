@@ -53,9 +53,10 @@ class Date extends Component {
         const { user } = this.props.auth;
 
         return (
-            <div className="container">
-                <div className="content">
-                    <h4>Create a new date!</h4>
+            <div className="dateContainer">
+                <div>
+                    <h4>Create a new date</h4>
+                    <br></br>
                     <form onSubmit={this.onSubmit}>
                         <label htmlFor="text">What is your date's name?</label>
                         <input
