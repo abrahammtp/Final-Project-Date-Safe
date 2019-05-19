@@ -7,32 +7,32 @@ import { Row, Container, Col } from 'react-grid-system';
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import PropTypes from "prop-types";
-
+import Map from "../../components/MapsAPI/maps"
 
 
 export class Shared extends Component {
-state = {
+  state = {
     dateName: "",
     dateAddress: "",
     dateWhen: "",
     metThrough: "",
     dateDescription: "",
-    name: "",
-    number: "",
-    userPhoto: "",
-}
 
-getSavedDates = () => {
+  }
+
+  getSavedDates = () => {
     const { user } = this.props.auth;
 
-    api.getSavedDates(user.id).then(res => 
+    api.getSavedDates(user.id).then(res =>
 
       this.setState({
         dateName: res.data[0].dates.dateName,
         dateWhen: res.data[0].dates.dateWhen,
         dateAddress: res.data[0].dates.dateAddress,
+        dateDescription: res.data[0].dates.dateDescription,
+        metThrough: res.data[0].dates.metThrough,
       })
-      )
+    )
   }
   render() {
     this.getSavedDates();
@@ -40,40 +40,64 @@ getSavedDates = () => {
     const photo = user.userPhoto
 
     return (
-    <div>
+      <div>
         <Navbar />
         <Row>
-        <Col>
-        <Container>
-            <div>
-            <img className="picture" src={(photo)} height="275" width="275" alt="user"></img>
-            <h4>{user.name}</h4>
-            <h5>{user.number}</h5>
-            </div>
-        </Container>
-        </Col>
-        <Col>
-        <Container>
-            <div>
-                <h3>Current Location</h3>
-                <h5>{this.state.dateAddress}</h5>
-            </div>
-        </Container>
-        </Col>
+          <Container className="userContainer">
+
+            <Col>
+              <div className="userInfo1">
+                <img className="picture" src={(photo)} height="275" width="275" alt="user"></img>
+              </div>
+            </Col>
+            <Col>
+              <div className="userInfo">
+                <p>Hello, {user.name.split(" ")[0]}!</p>
+                <p>Welcome to Date Safe</p>
+                <p>Address: {user.address}</p>
+                <p>Phone Number: {user.number}</p>
+              </div>
+            </Col>
+          </Container>
+          <Row>
+            <Col>
+
+              <Container>
+                <div className="date">
+                  <h3>Date Info</h3>
+                  <h6>Date's Name: {this.state.dateName}</h6>
+                  <h6>How they met: {this.state.metThrough}</h6>
+                  <h6>Date Notes: {this.state.dateDescription}</h6>
+                </div>
+              </Container>
+            </Col>
+          </Row>
+          <Row>
+
+            <Col>
+              <Container>
+                <div className="map">
+                  <h3>Current Location</h3>
+                  <h5>{this.state.dateAddress}</h5>
+                  <Map />
+                </div>
+              </Container>
+            </Col>
+          </Row>
         </Row>
-    </div>
+      </div>
     );
   }
 }
 
 Shared.propTypes = {
-    logoutUser: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired
-  };
-  const mapStateToProps = state => ({
-    auth: state.auth
-  });
-  export default connect(
-    mapStateToProps,
-    { logoutUser }
-  )(Shared);
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+export default connect(
+  mapStateToProps,
+  { logoutUser }
+)(Shared);

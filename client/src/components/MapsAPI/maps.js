@@ -1,47 +1,47 @@
-// import React, { Component } from "react";
+import React, { Component } from "react";
 
-// class Map extends Component {
+class Map extends Component {
 
-//     componentDidMount() {
-//         this.renderMap()
-//     }
+    componentDidMount() {
+        this.renderMap()
+    }
 
-//     renderMap = () => {
-//         loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCe9SUKM1ASyMMKdThjRFXBpPYGlFwTuz8&callback=initMap")
-//         window.initMap = this.initMap
-//     }
+    renderMap = () => {
+        loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCe9SUKM1ASyMMKdThjRFXBpPYGlFwTuz8&callback=initMap")
+        window.initMap = this.initMap
+    }
 
-//     initMap = () => {
-//         // eslint-disable-next-line
-//         var map = new window.google.maps.Map
-//             (document.getElementById('map'), {
-//                 center: { lat: 28.548373, lng: -81.380369 },
-//                 zoom: 10
-//             })
-//     }
+    initMap = () => {
+        // eslint-disable-next-line
+        var map = new window.google.maps.Map
+            (document.getElementById('map'), {
+                center: { lat: 28.548373, lng: -81.380369 },
+                zoom: 10
+            })
+    }
 
-//     render() {
-//         return (
-//             <main>
-//                 <div id="map"></div>
-//             </main>
-//         )
+    render() {
+        return (
+            <main>
+                <div id="map"></div>
+            </main>
+        )
 
-//     }
-// }
-// /*
-// <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCe9SUKM1ASyMMKdThjRFXBpPYGlFwTuz8&callback=initMap"
-// async defer></script>
-// */
-// function loadScript(url) {
-//     var index = window.document.getElementsByTagName("script")[0]
+    }
+}
+/*
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCe9SUKM1ASyMMKdThjRFXBpPYGlFwTuz8&callback=initMap"
+async defer></script>
+*/
+function loadScript(url) {
+    var index = window.document.getElementsByTagName("script")[0]
 
-//     var script = window.document.createElement("script")
+    var script = window.document.createElement("script")
 
-//     script.src = url
+    script.src = url
 
-//     script.async = true
-//     script.defer = true
-//     index.parentNode.insertBefore(script, index)
-// }
-// export default Map
+    script.async = true
+    script.defer = true
+    index.parentNode.insertBefore(script, index)
+}
+export default Map
