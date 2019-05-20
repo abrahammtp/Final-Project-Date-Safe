@@ -103,7 +103,11 @@ class Dashboard extends Component {
               <Container className="userContainer">
                 <Col>
                   <Col>
+
                     <h4 className="dateOne">Upcoming date</h4>
+                    <Link to="/shared">
+                  <button className="btn waves-effect share-Button light-blue" type="submit" name="action">Share Date</button>
+                </Link>
                     <br></br>
                     <h5>Date on {this.state.dateWhen}</h5>
                     <h6 className="date1">Going to {this.state.dateAddress} with {this.state.dateName}</h6>
@@ -125,6 +129,7 @@ class Dashboard extends Component {
                     <p>Name: {this.state.contactName}</p>
                     <p>Phone Number: {this.state.contactNumber}</p>
                     <p>Relationship to contact: {this.state.relationship}</p>
+
                   </Container>
                 </Col>
 
