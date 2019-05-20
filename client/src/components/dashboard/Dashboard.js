@@ -87,7 +87,7 @@ class Dashboard extends Component {
                   </Col>
                   <Col>
                     <div className="userInfo">
-                      <p>Hello, <b>{user.name.split(" ")[0]}!</b></p>
+                      <p>Hello, <b><i>{user.name.split(" ")[0]}!</i></b></p>
                       <p>Welcome to Date Safe</p>
                       <p>Address: {user.address}</p>
                       <p>Phone Number: {user.number}</p>
