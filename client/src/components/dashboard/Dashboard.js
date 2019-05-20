@@ -8,6 +8,7 @@ import "./style.css"
 import Contacts from "./Contacts";
 import { Link } from "react-router-dom";
 import api from "../../utils/api";
+import Footer from "../../components/layout/splashFooter/footer2";
 
 class Dashboard extends Component {
   state = {
@@ -58,86 +59,89 @@ class Dashboard extends Component {
 
     const photo = user.userPhoto
     return (
-      <div className="dashboard">
+      <div className="full-dashboard-page">
         <Navbar />
-        <Container>
-          <Row className="topRow">
-            <Col>
-              <Container className="userContainer">
+        <div className="dashboard">
+          <Container>
+            <Row className="topRow">
+              <Col>
+                <Container className="userContainer">
 
-                <Row>
-                  <h4 className="newDateHeader">Going on a date?</h4>
+                  <Row>
+                    <h4 className="newDateHeader">Going on a date?</h4>
 
-                </Row>
-                <br></br>
-                <Link to="/dates">
-                  <button className="btn waves-effect date-Button light-blue" type="submit" name="action">New Date</button>
-                </Link>
-              </Container>
-            </Col>
-            <Col>
-              <Container className="userContainer">
+                  </Row>
+                  <br></br>
+                  <Link to="/dates">
+                    <button className="btn waves-effect date-Button light-blue" type="submit" name="action">New Date</button>
+                  </Link>
+                </Container>
+              </Col>
+              <Col>
+                <Container className="userContainer">
 
-                <Col>
-                  <div className="userInfo1">
-                    <img className="picture" src={(photo)} height="275" width="275" alt="user"></img>
-                  </div>
-                </Col>
-                <Col>
-                  <div className="userInfo">
-                    <p>Hello, <b>{user.name.split(" ")[0]}!</b></p>
-                    <p>Welcome to Date Safe</p>
-                    <p>Address: {user.address}</p>
-                    <p>Phone Number: {user.number}</p>
-                  </div>
-                </Col>
-              </Container>
-            </Col>
-          </Row>
-        </Container>
+                  <Col>
+                    <div className="userInfo1">
+                      <img className="picture" src={(photo)} height="275" width="275" alt="user"></img>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div className="userInfo">
+                      <p>Hello, <b>{user.name.split(" ")[0]}!</b></p>
+                      <p>Welcome to Date Safe</p>
+                      <p>Address: {user.address}</p>
+                      <p>Phone Number: {user.number}</p>
+                    </div>
+                  </Col>
+                </Container>
+              </Col>
+            </Row>
+          </Container>
 
 
-        <Container >
-          <Row className="bottomRow">
-            <Col>
-              <Container className="userContainer">
-                <Col>
+          <Container >
+            <Row className="bottomRow">
+              <Col>
+                <Container className="userContainer">
+                  <Col>
+                    <Col>
+
+                      <h4 className="dateOne">Upcoming date</h4>
+                      <Link to="/shared">
+                        <button className="btn waves-effect share-Button light-blue" type="submit" name="action">Share Date</button>
+                      </Link>
+                      <br></br>
+                      <h5>Date on {this.state.dateWhen}</h5>
+                      <h6 className="date1">Going to {this.state.dateAddress} with {this.state.dateName}</h6>
+                    </Col>
+                  </Col>
+                </Container>
+              </Col>
+
+              <Col>
+                <Container className="userContainer">
                   <Col>
 
-                    <h4 className="dateOne">Upcoming date</h4>
-                    <Link to="/shared">
-                  <button className="btn waves-effect share-Button light-blue" type="submit" name="action">Share Date</button>
-                </Link>
-                    <br></br>
-                    <h5>Date on {this.state.dateWhen}</h5>
-                    <h6 className="date1">Going to {this.state.dateAddress} with {this.state.dateName}</h6>
+                    <h4 className="contactOne">Emergency Contact</h4>
+                    <div className="contactButton">
+                      <Contacts />
+                    </div>
+
+                    <Container className="contactCard">
+                      <p>Name: {this.state.contactName}</p>
+                      <p>Phone Number: {this.state.contactNumber}</p>
+                      <p>Relationship to contact: {this.state.relationship}</p>
+
+                    </Container>
                   </Col>
-                </Col>
-              </Container>
-            </Col>
 
-            <Col>
-              <Container className="userContainer">
-                <Col>
-
-                  <h4 className="contactOne">Emergency Contact</h4>
-                  <div className="contactButton">
-                    <Contacts />
-                  </div>
-
-                  <Container className="contactCard">
-                    <p>Name: {this.state.contactName}</p>
-                    <p>Phone Number: {this.state.contactNumber}</p>
-                    <p>Relationship to contact: {this.state.relationship}</p>
-
-                  </Container>
-                </Col>
-
-              </Container>
-            </Col>
-          </Row>
-        </Container>
-      </div >
+                </Container>
+              </Col>
+            </Row>
+          </Container>
+          <Footer />
+        </div >
+      </div>
     );
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/layout/Navbar/Navbar";
-import Footer2 from "../../components/layout/splashFooter/footer"
+import Footer2 from "../../components/layout/splashFooter/footer2"
 import "./splash.css";
 
 class Splash extends Component {

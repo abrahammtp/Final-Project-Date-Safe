@@ -6,7 +6,7 @@ import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
 import "./Register.css";
 import Navbar from "../../components/layout/Navbar/Navbar";
-import Footer from "../../components/layout/Footer/footer"
+import Footer from "../layout/registerFooter/footer3"
 
 class Register extends Component {
   constructor() {
@@ -65,7 +65,7 @@ class Register extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="full-page">
+      <div className="full-register-page">
         <Navbar />
         <div className="container1">
           <div className="row">

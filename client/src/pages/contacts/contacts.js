@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import api from "../../utils/api";
 import { logoutUser } from "../../actions/authActions";
 import "./style.css";
-import Footer from "../../components/layout/splashFooter/footer";
+import Footer from "../../components/layout/splashFooter/footer2";
 import Navbar from "../../components/layout/Navbar2/Navbar2";
 
 class Contact extends Component {

@@ -6,7 +6,7 @@ import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
 import Navbar2 from "../../components/layout/Navbar2/Navbar2"
 import "./Login.css";
-import Footer from "../../components/layout/Footer/footer"
+import Footer from "../layout/splashFooter/footer2"
 
 class Login extends Component {
   constructor() {
@@ -54,7 +54,7 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="full-page">
+      <div className="full-login-page">
         <Navbar2 />
         <div className="container">
           <div style={{ marginTop: "4rem" }} className="row">
