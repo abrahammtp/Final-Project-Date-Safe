@@ -13,10 +13,11 @@ form {
 }
 
 .full-register-page {
-    background: url(../../images/register-login-background.jpg);
+    background: url(../../images/wallpaper2.jpeg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     background-size: 100%;
+    
 }
