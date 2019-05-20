@@ -66,3 +66,12 @@ margin-top: 3.6%
 .sharedDateInfo {
 	font-size: 18px
 }
+
+.sharedDateLocation {
+	padding-top: 2%;
+	margin-left: 38%
+}
+
+.locationDate {
+	text-align: center
+}
