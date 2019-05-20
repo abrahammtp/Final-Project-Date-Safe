@@ -116,7 +116,7 @@ class Dashboard extends Component {
               <Container className="userContainer">
                 <Col>
 
-                  <h5 className="contactOne">Emergency Contact</h5>
+                  <h4 className="contactOne">Emergency Contact</h4>
                   <div className="contactButton">
                     <Contacts />
                   </div>

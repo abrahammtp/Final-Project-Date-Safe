@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 import api from "../../utils/api";
 import { logoutUser } from "../../actions/authActions";
 import "./style.css";
+import Footer from "../../components/layout/splashFooter/footer";
+import Navbar from "../../components/layout/Navbar2/Navbar2";
 
 class Contact extends Component {
     constructor() {
@@ -49,42 +51,46 @@ class Contact extends Component {
         const { user } = this.props.auth;
 
         return (
-            <div className="contactContainer">
-                <div>
-                    <h4>Create a new emergency contact</h4>
-                    <br></br>
-                    <form onSubmit={this.onSubmit}>
-                        <label htmlFor="text">Name of your contact</label>
-                        <input
-                            onChange={this.onChange}
-                            value={this.state.contactName}
-                            id="contactName"
-                            type="text"
-                        />
-                        <label htmlFor="text">Contact's phone number</label>
-                        <input
-                            onChange={this.onChange}
-                            value={this.state.contactNumber}
-                            id="contactNumber"
-                            type="text"
-                        />
-                        <label htmlFor="text">Relationship with the contact</label>
-                        <input
-                            onChange={this.onChange}
-                            value={this.state.relationship}
-                            id="relationship"
-                            type="text"
-                        />
-                        <div className="form-button2">
-                            {/* <Link to="/dashboard"> */}
-                            <button href="#!" type="submit" className="btn waves-effect waves-green btn" name="action">Submit</button>
-                            {/* </Link> */}
-                            <Link to="/dashboard">
-                            <button href="#!" type="submit" className="btn waves-effect waves-green btn" name="action">Dashboard</button>
-                            </Link>
-                        </div>
-                    </form>
+            <div className="fullContactPage">
+                <Navbar />
+                <div className="contactContainer">
+                    <div>
+                        <h4 className="createContactHeader">Create a new emergency contact</h4>
+                        <br></br>
+                        <form className="contactForm" onSubmit={this.onSubmit}>
+                            <label htmlFor="text">Name of your contact</label>
+                            <input
+                                onChange={this.onChange}
+                                value={this.state.contactName}
+                                id="contactName"
+                                type="text"
+                            />
+                            <label htmlFor="text">Contact's phone number</label>
+                            <input
+                                onChange={this.onChange}
+                                value={this.state.contactNumber}
+                                id="contactNumber"
+                                type="text"
+                            />
+                            <label htmlFor="text">Relationship with the contact</label>
+                            <input
+                                onChange={this.onChange}
+                                value={this.state.relationship}
+                                id="relationship"
+                                type="text"
+                            />
+                            <br></br>
+                            <br></br>
+                            <div className="form-button2">
+                                <button href="#!" type="submit" className="btn waves-effect waves-green btn light-blue" name="action">Submit</button>
+                                <Link to="/dashboard">
+                                    <button href="#!" type="submit" className="btn waves-effect waves-green btn light-blue" name="action">Dashboard</button>
+                                </Link>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+                <Footer />
             </div>
         )
     }
