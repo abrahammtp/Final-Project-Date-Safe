@@ -1,9 +1,10 @@
-.userContainer {
+.sharedUser {
 	background: white;
 	height: 100%;
+	width: 80%;
 	border-radius: 5px;
 	box-shadow: 5px 10px 18px rgb(77, 75, 75);
-	width: 60%
+	margin-left: 50px
 }
 .map {
   background: white;
@@ -14,14 +15,14 @@
   margin-right: 20%;
   /* margin-left: 40%; */
 }
-.date {
+.sharedDate {
   background: white;
 	height: 100%;
 	border-radius: 5px;
 	box-shadow: 5px 10px 18px rgb(77, 75, 75);
-  width: 50%;
+  width: 80%;
   padding: 20px;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 .picture {
 	margin-right: 37px;
