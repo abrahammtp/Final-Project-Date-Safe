@@ -5,7 +5,6 @@
     max-height: 565px;
     margin-top: 177px;
     margin-left: 575px;
-    color: black
 }
 
 .fullContactPage {
@@ -20,10 +19,6 @@
 
 .createContactHeader {
     margin-left: 9%
-}
-
-.contactForm {
-    color: red
 }
 
 .contact-dashboard {
