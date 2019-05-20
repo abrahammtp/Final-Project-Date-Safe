@@ -83,8 +83,10 @@ class Contact extends Component {
                             <br></br>
                             <div className="form-button2">
                                 <button href="#!" type="submit" className="btn waves-effect waves-green btn light-blue" name="action">Submit</button>
+                            </div>
+                            <div className="contact-dashboard">
                                 <Link to="/dashboard">
-                                    <button href="#!" type="submit" className="btn waves-effect waves-green btn light-blue" name="action">Dashboard</button>
+                                    <button href="#!" type="submit" className=" contact-dashboard btn waves-effect waves-green btn light-blue" name="action">Dashboard</button>
                                 </Link>
                             </div>
                         </form>
