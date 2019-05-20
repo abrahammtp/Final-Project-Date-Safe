@@ -2,12 +2,13 @@
 import React, { Component } from 'react';
 import './style.css'
 import api from "../../utils/api";
-import Navbar from "../../components/layout/Navbar/Navbar";
+import Navbar from "../../components/layout/Navbar2/Navbar2";
 import { Row, Container, Col } from 'react-grid-system';
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import PropTypes from "prop-types";
-import Map from "../../components/MapsAPI/maps"
+import Map from "../../components/MapsAPI/maps";
+import Footer from "../../components/layout/registerFooter/footer3"
 
 
 export class Shared extends Component {
@@ -40,24 +41,25 @@ export class Shared extends Component {
     const photo = user.userPhoto
 
     return (
-      <div>
+      <div className="full-shared-page">
         <Navbar />
-        <Row>
-<Col>
-          <Container className="sharedUser">
+        <div className="sharedPage-Container">
+          <Row>
+            <Col>
+              <Container className="sharedUser">
 
-              <div className="userInfo1">
-                <img className="picture" src={(photo)} height="275" width="275" alt="user"></img>
-              </div>
-              <div className="userInfo">
-                <p>Hello, {user.name.split(" ")[0]}!</p>
-                <p>Welcome to Date Safe</p>
-                <p>Address: {user.address}</p>
-                <p>Phone Number: {user.number}</p>
-              </div>
-          </Container>
-</Col>
-<Col>
+                <div className="userInfo1">
+                  <img className="picture" src={(photo)} height="275" width="275" alt="user"></img>
+                </div>
+                <div className="userInfo">
+                  <p>Hello, {user.name.split(" ")[0]}!</p>
+                  <p>Welcome to Date Safe</p>
+                  <p>Address: {user.address}</p>
+                  <p>Phone Number: {user.number}</p>
+                </div>
+              </Container>
+            </Col>
+            <Col>
               <Container>
                 <div className="sharedDate">
                   <h3>Date Info</h3>
@@ -66,15 +68,17 @@ export class Shared extends Component {
                   <h6>Date Notes: {this.state.dateDescription}</h6>
                 </div>
               </Container>
-</Col>
-        </Row>
-              <Container>
-                <div className="map">
-                  <h3>Date Location</h3>
-                  <h5>{this.state.dateAddress}</h5>
-                  <Map />
-                </div>
-              </Container>
+            </Col>
+          </Row>
+          <Container>
+            <div className="map">
+              <h3>Date Location</h3>
+              <h5>{this.state.dateAddress}</h5>
+              <Map />
+            </div>
+          </Container>
+        </div>
+        <Footer />
       </div>
     );
   }
