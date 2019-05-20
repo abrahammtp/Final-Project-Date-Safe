@@ -13,7 +13,6 @@
 	box-shadow: 5px 10px 18px rgb(77, 75, 75);
   width: 100%;
   margin-right: 20%;
-	/* margin-left: 40%; */
 	margin-top: 5%
 }
 .sharedDate {
@@ -23,10 +22,11 @@
 	box-shadow: 5px 10px 18px rgb(77, 75, 75);
   width: 80%;
   padding: 20px;
-  margin-top: 30px;
+  margin-top: 17px;
 }
-.picture {
+.sharedPicture {
 	margin-right: 37px;
+	margin-left: 130px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	max-height: 150px;
@@ -34,7 +34,7 @@
 	float: left
 }
 
-.userInfo1{
+.sharedUserInfo1{
 float: left;
 margin-top: 3.6%
 }
@@ -53,14 +53,16 @@ margin-top: 3.6%
 	margin-bottom: 50px;
 }
 
-/* p {
-	margin-top: 5%
+.sharedUserInfo {
+	padding: 3.5%;
+	font-size: 18px
 }
 
-.userInfo {
-	margin-top: -3%
+.sharedDateHeader {
+	margin-left: 37%;
+	margin-top: -1%
 }
 
-.userName {
-	margin-top:
-} */
+.sharedDateInfo {
+	font-size: 18px
+}

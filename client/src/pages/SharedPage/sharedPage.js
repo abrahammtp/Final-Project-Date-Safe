@@ -48,24 +48,28 @@ export class Shared extends Component {
             <Col>
               <Container className="sharedUser">
 
-                <div className="userInfo1">
-                  <img className="picture" src={(photo)} height="275" width="275" alt="user"></img>
+                <div className="sharedUserInfo1">
+                  <img className="sharedPicture" src={(photo)} height="275" width="275" alt="user"></img>
                 </div>
-                <div className="userInfo">
-                  <p>Hello, {user.name.split(" ")[0]}!</p>
-                  <p>Welcome to Date Safe</p>
-                  <p>Address: {user.address}</p>
-                  <p>Phone Number: {user.number}</p>
-                </div>
+                <Col>
+                  <div className="sharedUserInfo">
+                    <p>Hello, <b><i>{user.name.split(" ")[0]}!</i></b></p>
+                    <p>Welcome to Date Safe</p>
+                    <p>Address: {user.address}</p>
+                    <p>Phone Number: {user.number}</p>
+                  </div>
+                </Col>
               </Container>
             </Col>
             <Col>
               <Container>
                 <div className="sharedDate">
-                  <h3>Date Info</h3>
-                  <h6>Date's Name: {this.state.dateName}</h6>
-                  <h6>How they met: {this.state.metThrough}</h6>
-                  <h6>Date Notes: {this.state.dateDescription}</h6>
+                  <h3 className="sharedDateHeader">Date Info</h3>
+                  <div className="sharedDateInfo">
+                    <p>Date's name: {this.state.dateName}</p>
+                    <p>How they met: {this.state.metThrough}</p>
+                    <p>Date notes: {this.state.dateDescription}</p>
+                  </div>
                 </div>
               </Container>
             </Col>
