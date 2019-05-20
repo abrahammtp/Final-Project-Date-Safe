@@ -19,14 +19,19 @@
 }
 
 .createContactHeader {
-    margin-left: 3%
+    margin-left: 9%
 }
 
 .contactForm {
     color: red
 }
 
-.dashboardButton {
-    margin-left: 50px
+.contact-dashboard {
+    margin-left: 31%;
+    margin-top: -3.8%
+}
+
+.form-button2 {
+    margin-left: 29%
 }
 
