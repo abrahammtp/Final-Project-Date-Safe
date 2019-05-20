@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { logoutUser } from "../../actions/authActions";
 import "./style.css";
 import api from "../../utils/api";
-import Footer from "../../components/layout/splashFooter/footer";
+import Footer from "../../components/layout/splashFooter/footer2";
 import Navbar from "../../components/layout/Navbar2/Navbar2";
 
 

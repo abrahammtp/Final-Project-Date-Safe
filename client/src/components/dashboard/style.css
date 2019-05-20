@@ -64,12 +64,7 @@ float: left;
 }
 
 .dashboard {
-	background: url(../../images/register-login-background.jpg);
-	-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-size: 100%;
+	margin-top: 140px
 }
 
 .date-Button {
@@ -80,4 +75,14 @@ float: left;
 }
 	.date1 {
 	margin-bottom: 20px
+}
+
+.full-dashboard-page {
+	background: url(../../images/register-login-background.jpg);
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	background-size: 100%;
+	padding-bottom: 140px
 }
