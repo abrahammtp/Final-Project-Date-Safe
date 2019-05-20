@@ -76,8 +76,9 @@ export class Shared extends Component {
           </Row>
           <Container>
             <div className="map">
-              <h3>Date Location</h3>
-              <h5>{this.state.dateAddress}</h5>
+              <h3 className="sharedDateLocation">Date Location</h3>
+              <h5 className="locationDate">{this.state.dateAddress}</h5>
+              <br></br>
               <Map />
             </div>
           </Container>
