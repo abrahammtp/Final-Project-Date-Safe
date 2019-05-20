@@ -44,7 +44,7 @@ export class Shared extends Component {
         <Navbar />
         <Row>
 <Col>
-          <Container className="userContainer">
+          <Container className="sharedUser">
 
               <div className="userInfo1">
                 <img className="picture" src={(photo)} height="275" width="275" alt="user"></img>
@@ -59,7 +59,7 @@ export class Shared extends Component {
 </Col>
 <Col>
               <Container>
-                <div className="date">
+                <div className="sharedDate">
                   <h3>Date Info</h3>
                   <h6>Date's Name: {this.state.dateName}</h6>
                   <h6>How they met: {this.state.metThrough}</h6>
