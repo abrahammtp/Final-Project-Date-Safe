@@ -7,10 +7,10 @@ class navBar extends Component {
     return (
       <div>
         <nav>
-          <div class="">
+          <div className="">
             <img className="img" src={require('./logo.png')} alt="logo">
             </img>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <ul id="nav-mobile" className="right hide-on-med-and-down">
               <Link to="/login">
                 <button className="btn waves-effect" type="submit" name="action">Log In</button>
               </Link>
