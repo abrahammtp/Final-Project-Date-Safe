@@ -8,13 +8,14 @@
 }
 
 .fullContactPage {
-    background: url(../../images/register-login-background.jpg);
+    background: url(../../images/wallpaper2.jpeg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     background-size: 100%;
-    padding-bottom: 235px
+    /* padding-bottom: 210px */
+    height: 100vh;
 }
 
 .createContactHeader {

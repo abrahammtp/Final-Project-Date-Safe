@@ -8,13 +8,13 @@
 }
 
 .full-login-page {
-    background: url(../../images/register-login-background.jpg);
+    background: url(../../images/wallpaper2.jpeg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     background-size: 100%;
-    padding-bottom: 225px
+    height: 100vh;
 }
 .login-Register {
     font-family: 'Montserrat', sans-serif;
